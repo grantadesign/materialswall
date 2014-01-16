@@ -7,7 +7,7 @@
 @Styles.Render("~/Content/card.css")
 
 <div class="card">
-    <img src="http://www.davey.com/elements/skin/home_tree.png" />
+    <img src="@Url.Action("Index", "Image", new { identifier = @Model.Identifier })" />
                     
     <div class="details">
         <div class="materialname">@Model.Name</div>

@@ -16,8 +16,12 @@
 }
 
 .wallcard img {
+    display: block;
     margin: 12px;
+    margin-bottom: 20px;
     box-shadow: 5px 5px 3px #ccc;
+    max-width: 90% !important;
+    height: auto;
 }
 
 .wallcard .details {

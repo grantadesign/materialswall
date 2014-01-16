@@ -17,6 +17,8 @@
     margin-right: auto;
     margin-top: 12px;
     border: 1px solid #CCC;
+    max-width: 100% !important;
+    height: auto;
 }
 
 .card .details {
