@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Granta Materials Wall@(string.IsNullOrWhiteSpace(ViewBag.Title) ? "" : " - " + ViewBag.Title)</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="icon" href="http://www.grantadesign.com/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+        @Styles.Render("~/Content/css", "~/Content/materialswall.css")
+    </head>
+
+    <body>
+@*        @Html.ActionLink("About", "Index", "About")*@
+
+        <div class="jumbotron">
+            <div class="container">
+                @Html.ActionLink("Granta Materials Wall", "Index", "Home")
+            </div>
+        </div>
+
+        <div class="container">
+            @RenderBody()
+        </div>
+        
+        <div class="container">
+            <div class="footer">
+            <hr/>
+                &copy;@(DateTime.Now.Year) <a href="http://www.grantadesign.com">Granta Design</a>
+                |
+                <a href="http://www.grantadesign.com/smallprint.htm">Legal</a>
+                |
+                <a href="http://www.grantadesign.com/contact/">Contact</a>
+            </div>
+        </div>
+        
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

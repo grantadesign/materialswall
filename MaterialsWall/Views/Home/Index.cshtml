@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Granta.MaterialsWall.DataAccess.Card>
+
+@{
+    ViewBag.title = "test";
+}
+
+<div class="row">
+    @foreach(var card in Model)
+    {
+        <a href="@Url.Action("Index", "Card", new { identifier = card.Identifier })">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="wallcard" style="border: 1px solid green">
+                    <img src="http://www.davey.com/elements/skin/home_tree.png" width="50" height="50"/>
+                    
+                    <div class="details">
+                        <div class="materialname">@card.Name</div>
+                        <div class="materialpath">@card.Path</div>
+                    </div>
+                </div>
+            </div></a>
+    }
+</div>
