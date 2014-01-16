@@ -2,6 +2,8 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Granta.MaterialsWall.Ninject;
+using Ninject.Web.Mvc;
 
 namespace Granta.MaterialsWall
 {
@@ -11,7 +13,12 @@ namespace Granta.MaterialsWall
         {
             AreaRegistration.RegisterAllAreas();
 
-            WebApiConfig.Register(GlobalConfiguration.Configuration);
+            var kernel = NinjectConfig.Start();
+
+            HttpConfiguration configuration = GlobalConfiguration.Configuration;
+            configuration.DependencyResolver = new DependencyResolverAdapter(new NinjectDependencyResolver(kernel));
+            
+            WebApiConfig.Register(configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);

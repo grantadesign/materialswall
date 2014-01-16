@@ -3,7 +3,13 @@ using System.Collections.Generic;
 
 namespace Granta.MaterialsWall.DataAccess
 {
-    public class CardRepository
+    public interface ICardRepository
+    {
+        IEnumerable<Card> GetCards();
+        Card GetCard(Guid identifier);
+    }
+
+    public class CardRepository : ICardRepository
     {
         private readonly Dictionary<Guid, Card> cards;
 
