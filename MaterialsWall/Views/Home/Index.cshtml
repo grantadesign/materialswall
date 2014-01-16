@@ -4,12 +4,14 @@
     ViewBag.title = "test";
 }
 
+@Styles.Render("~/Content/wallcard.css")
+
 <div class="row">
     @foreach(var card in Model)
     {
         <a href="@Url.Action("Index", "Card", new { identifier = card.Identifier })">
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="wallcard" style="border: 1px solid green">
+                <div class="wallcard">
                     <img src="http://www.davey.com/elements/skin/home_tree.png" width="50" height="50"/>
                     
                     <div class="details">

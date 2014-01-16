@@ -1,0 +1,40 @@
+﻿.wallcard {
+    background-color: #eee;
+    border: 1px solid #666;
+    border-radius: 2px;
+    background: -webkit-linear-gradient(#F2F2F2, white); /* For Safari */
+    background: -o-linear-gradient(#F2F2F2, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#F2F2F2, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#F2F2F2, white); /* Standard syntax */
+    margin: 10px;
+    padding: 4px;
+    min-height: 250px;
+}
+
+.wallcard:hover {
+    box-shadow: 5px 5px 3px #CCC;
+}
+
+.wallcard img {
+    margin: 12px;
+    box-shadow: 5px 5px 3px #ccc;
+}
+
+.wallcard .details {
+    margin: 12px;
+}
+
+.materialname {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #666;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.materialpath {
+    margin-top: 20px;
+    color: #cc6633;
+    font-weight: bold;
+    font-size: small;
+    text-wrap: normal;
+}

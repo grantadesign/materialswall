@@ -1,1 +1,16 @@
-﻿card
+﻿@model Granta.MaterialsWall.DataAccess.Card
+
+@{
+    ViewBag.title = Model.Name;
+}
+
+@Styles.Render("~/Content/card.css")
+
+<div class="wallcard">
+    <img src="http://www.davey.com/elements/skin/home_tree.png" width="50" height="50"/>
+                    
+    <div class="details">
+        <div class="materialname">@Model.Name</div>
+        <div class="materialpath">@Model.Path</div>
+    </div>
+</div>

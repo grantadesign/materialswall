@@ -1,22 +1,35 @@
 ﻿body {
-    x-font-size: .85em;
     font-family: Helvetica, Arial, sans-serif;
     font-size: medium;
     color: #232323;
-    background-color: #fff;
+    background-color: white;
 }
 
 header, footer, nav, section {
     display: block;
 }
 
+hr {
+    border-top: 1px solid #ccc;
+}
+
 .jumbotron {
+    background-color: #FF6600;
     border-bottom: 1px solid #999;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.jumbotron a, .jumbotron a:hover {
+    color: #003366;
+    text-decoration: none;
 }
 
 .footer {
     font-size: small;
     color: #999;
+    padding-top: 30px;
     padding-bottom: 10px;
     text-align: right;
 }
@@ -36,20 +49,4 @@ header, footer, nav, section {
 [class*="col-"] {
     padding-bottom: 5px;
     padding-left: 5px;
-}
-
-.wallcard {
-    background-color: #eee;
-    border: 1px solid #666;
-    background: -webkit-linear-gradient(#F2F2F2, white); /* For Safari */
-    background: -o-linear-gradient(#F2F2F2, white); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#F2F2F2, white); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#F2F2F2, white); /* Standard syntax */
-    margin: 10px;
-    padding: 4px;
-    min-height: 250px;
-}
-
-.wallcard:hover {
-    box-shadow: 5px 5px 3px #CCC;
 }
