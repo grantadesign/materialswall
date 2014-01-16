@@ -18,7 +18,11 @@
 
         <div class="jumbotron">
             <div class="container">
-                @Html.ActionLink("Granta Materials Wall", "Index", "Home")
+                <a href="@Url.Action("Index", "Home")">
+                    Granta
+                    <br/>
+                    Materials Collection
+                </a>
             </div>
         </div>
 
@@ -28,7 +32,10 @@
         
         <div class="container">
             <div class="footer">
-            <hr/>
+                <hr/>
+                <div class="about" style="float:left">
+                    @Html.ActionLink("About the materials collection", "About", "Home")
+                </div>
                 &copy;@(DateTime.Now.Year) <a href="http://www.grantadesign.com">Granta Design</a>
                 |
                 <a href="http://www.grantadesign.com/smallprint.htm">Legal</a>

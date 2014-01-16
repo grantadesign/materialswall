@@ -6,11 +6,51 @@
 
 @Styles.Render("~/Content/card.css")
 
-<div class="wallcard">
-    <img src="http://www.davey.com/elements/skin/home_tree.png" width="50" height="50"/>
+<div class="card">
+    <img src="http://www.davey.com/elements/skin/home_tree.png" />
                     
     <div class="details">
         <div class="materialname">@Model.Name</div>
-        <div class="materialpath">@Model.Path</div>
+        
+        @if (@Model.Path != null)
+        {
+            <div class="materialpath">@Model.Path</div>
+        }
+
+        @if (@Model.Description != null)
+        {
+            <div class="data">
+                <div class="heading">
+                    Description
+                </div>
+                <div class="value">
+                    @Model.Description
+                </div>
+            </div>
+        }
+
+        @if (@Model.TypicalUses != null)
+        {
+            <div class="data">
+                <div class="heading">
+                    Typical Uses
+                </div>
+                <div class="value">
+                    @Model.TypicalUses
+                </div>
+            </div>
+        }
+
+        @if (@Model.Source != null)
+        {
+            <div class="data">
+                <div class="heading">
+                    Source
+                </div>
+                <div class="value">
+                    @Model.Source
+                </div>
+            </div>
+        }
     </div>
 </div>

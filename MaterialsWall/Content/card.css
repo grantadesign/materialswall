@@ -11,24 +11,36 @@
     min-height: 250px;
 }
 
-.card:hover {
-    box-shadow: 5px 5px 3px #CCC;
-}
-
 .card img {
-    margin: 12px;
-    box-shadow: 5px 5px 3px #ccc;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 12px;
+    border: 1px solid #CCC;
 }
 
 .card .details {
     margin: 12px;
 }
 
+.card .data {
+    margin-top: 20px;
+}
+
+.card .data .heading {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.card .data .value {
+    margin-left: 20px;
+}
+
 .materialname {
     font-family: Helvetica, Arial, sans-serif;
     color: #666;
     font-weight: bold;
-    font-size: larger;
+    font-size: xx-large;
 }
 
 .materialpath {

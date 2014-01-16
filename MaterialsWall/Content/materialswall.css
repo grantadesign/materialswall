@@ -19,6 +19,7 @@ hr {
     text-transform: uppercase;
     text-align: center;
     font-size: xx-large;
+    line-height: 1;
 }
 
 .jumbotron a, .jumbotron a:hover {
