@@ -6,19 +6,26 @@
 
 @Styles.Render("~/Content/wallcard.css")
 
+<div class="navbar">
+    <div class="pull-right">
+        <input class="search-query" type="text" placeholder="Search" onkeyup="filter('.row a', this)" />
+    </div></div>
+
 <div class="row">
     @foreach(var card in Model)
     {
-        <a href="@Url.Action("Index", "Card", new { identifier = card.Identifier })">
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                <div class="wallcard">
-                    <img src="@Url.Action("Thumbnail", "Image", new { identifier = card.Identifier })"/>
+                <a href="@Url.Action("Index", "Card", new { identifier = card.Identifier })">
+                    <div class="wallcard">
+                        <img src="@Url.Action("Thumbnail", "Image", new { identifier = card.Identifier })"/>
                     
-                    <div class="details">
-                        <div class="materialname">@card.Name</div>
-                        <div class="materialpath">@card.Path</div>
-                    </div>
-                </div>
-            </div></a>
+                        <div class="details">
+                            <div class="materialname">@card.Name</div>
+                            <div class="materialpath">@card.Path</div>
+                        </div>
+                    </div></a>
+            </div>
     }
 </div>
+
+@Scripts.Render("~/Scripts/searchfilter.js")
