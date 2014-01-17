@@ -1,0 +1,35 @@
+﻿.walllabel {
+    border: 1px solid black;
+    width: 580px;
+    height: 140px;
+    page-break-inside: avoid;
+}    
+
+.walllabel div {
+    margin-bottom: 8px;
+    padding: 3px;
+}
+
+.walllabel img {
+    float: right;
+}
+
+.materialname {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #333;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.materialpath {
+    color: #cc6633;
+    font-weight: bold;
+    font-size: 14px;
+    text-wrap: normal;
+}
+
+.materialsource {
+    color: #666;
+    font-weight: bold;
+    font-size: 14px;
+}

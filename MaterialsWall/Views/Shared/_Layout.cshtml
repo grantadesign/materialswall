@@ -16,9 +16,7 @@
         <div class="jumbotron">
             <div class="container">
                 <a href="@Url.Action("Index", "Home")">
-                    Granta
-                    <br/>
-                    Materials Collection
+                    <img src="~/Content/logo.png"/>
                 </a>
             </div>
         </div>
@@ -33,7 +31,17 @@
                 <div class="about" style="float:left">
                     @Html.ActionLink("About the materials collection", "About", "Home")
                 </div>
-                &copy;@(DateTime.Now.Year) <a href="http://www.grantadesign.com">Granta Design</a>
+                @RenderSection("customFooter", required: false)
+
+                <nobr>
+                    &copy; <a href="http://www.grantadesign.com">Granta Design</a> @(DateTime.Now.Year) All rights reserved
+                </nobr>
+                |
+                <a href="http://www.grantadesign.com/smallprint.htm">Legal</a>
+                |
+                <a href="http://www.grantadesign.com/company/">Company</a>
+                |
+                <a href="http://www.grantadesign.com/contact/">Contact</a>
             </div>
         </div>
         
