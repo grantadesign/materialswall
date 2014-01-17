@@ -9,7 +9,7 @@ namespace Granta.MaterialsWall.Controllers
 {
     public sealed class LabelsController : Controller
     {
-        private const int QRCodeSize = 125;
+        private const int QRCodeSize = 130;
 
         private readonly ICardRepository cardRepository;
         private readonly IQRCodeGenerator codeGenerator;
