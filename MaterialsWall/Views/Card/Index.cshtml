@@ -52,5 +52,22 @@
                 </div>
             </div>
         }
+        
+        @if (@Model.Links != null && @Model.Links.Length > 0)
+        {
+            <div class="data">
+                <div class="heading">
+                    See Also
+                </div>
+                <div class="value">
+                    <ul>
+                    @foreach (var link in @Model.Links)
+                    {
+                        <li><a href="@link">@link</a></li>
+                    }
+                    </ul>
+                </div>
+            </div>
+        }
     </div>
 </div>

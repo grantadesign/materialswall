@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Card.cs" />
     <Compile Include="CardRepository.cs" />
+    <Compile Include="DataFileWatcher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
