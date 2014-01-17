@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
 using System.Net.Mime;
 using System.Web.Mvc;
+using Granta.MaterialsWall.Images;
 
 namespace Granta.MaterialsWall.Controllers
 {
@@ -11,43 +10,57 @@ namespace Granta.MaterialsWall.Controllers
     {
         private const int ThumbnailWidth = 240;
 
+        private readonly IImagePathFormatter imagePathFormatter;
+        private readonly IImageToRawDataConverter imageToRawDataConverter;
+        private readonly IThumbnailGenerator thumbnailGenerator;
+
+        public ImageController(IImagePathFormatter imagePathFormatter, IImageToRawDataConverter imageToRawDataConverter, IThumbnailGenerator thumbnailGenerator)
+        {
+            if (imagePathFormatter == null)
+            {
+                throw new ArgumentNullException("imagePathFormatter");
+            }
+
+            if (imageToRawDataConverter == null)
+            {
+                throw new ArgumentNullException("imageToRawDataConverter");
+            }
+
+            if (thumbnailGenerator == null)
+            {
+                throw new ArgumentNullException("thumbnailGenerator");
+            }
+            
+            this.imagePathFormatter = imagePathFormatter;
+            this.imageToRawDataConverter = imageToRawDataConverter;
+            this.thumbnailGenerator = thumbnailGenerator;
+        }
+
         public ActionResult Index(Guid identifier)
         {
-            string imagePath = GetImagePath(identifier);
+            string imagePath = imagePathFormatter.GetImagePath(Server, identifier);
             var image = new Bitmap(imagePath);
             return GetImageStream(image);
         }
 
         public ActionResult Thumbnail(Guid identifier)
         {
-            string imagePath = GetImagePath(identifier);
+            string imagePath = imagePathFormatter.GetImagePath(Server, identifier);
             var image = new Bitmap(imagePath);
             var originalSize = image.Size;
 
             if (originalSize.Width > ThumbnailWidth)
             {
                 double scale = ((double) ThumbnailWidth) / originalSize.Width;
-                int newHeight = (int) Math.Floor(originalSize.Height * scale);
-
-                Bitmap scaledImage = new Bitmap(image, ThumbnailWidth, newHeight);
-                image.Dispose();
-                image = scaledImage;
+                image = thumbnailGenerator.Scale(image, scale);
             }
 
             return GetImageStream(image);
         }
 
-        private string GetImagePath(Guid identifier)
-        {
-            string imageDirectory = Server.MapPath("~/App_Data/MaterialImages");
-            string imagePath = Path.Combine(imageDirectory, "tree.jpg");
-            return imagePath;
-        }
-
         private FileResult GetImageStream(Bitmap image)
         {
-            var stream = new MemoryStream();
-            image.Save(stream, ImageFormat.Jpeg);
+            var bytes = imageToRawDataConverter.GetImageStream(image);
 
             var contentDisposition = new ContentDisposition
             {
@@ -56,7 +69,7 @@ namespace Granta.MaterialsWall.Controllers
             };
 
             Response.AppendHeader("Content-Disposition", contentDisposition.ToString());
-            return File(stream.ToArray(), "image/jpeg");
+            return File(bytes, "image/jpeg");
         }
     }
 }

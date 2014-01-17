@@ -10,6 +10,7 @@ namespace Granta.MaterialsWall.DataAccess
         public string Description{get;set;}
         public string TypicalUses{get;set;}
         public string Source{get;set;}
+        public string Sample{get;set;}
         public string[] Links{get;set;}
     }
 }

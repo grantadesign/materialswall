@@ -72,6 +72,7 @@ namespace Granta.MaterialsWall.DataAccess
                 Description = GetValueOrNullIfNotSet(parts[3]),
                 TypicalUses = GetValueOrNullIfNotSet(parts[4]),
                 Source = GetValueOrNullIfNotSet(parts[6]),
+//                Sample = GetValueOrNullIfNotSet(parts[8]),
                 Links = new[] {"http://a.sapmple.link"}
             };
         }
