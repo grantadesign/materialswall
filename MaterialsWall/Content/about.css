@@ -18,3 +18,9 @@ img.piccie {
     font-size: x-large;
     font-weight: bold;
 }
+
+.links {
+    display: inline-block;
+    border: 1px solid #666;
+    padding: 20px;
+}

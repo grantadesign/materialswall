@@ -28,16 +28,8 @@
         <div class="container">
             <div class="footer">
                 <hr/>
-                <div class="about" style="float:left">
-                    @Html.ActionLink("About the materials collection", "About", "Home")
-                </div>
-
-                <div class="footer">
-                    <a href="http://www.grantadesign.com">Granta Design</a>
-                    |
-                    <a href="http://www.grantadesign.com/jobs/">Careers</a>
-                    |
-                    <a href="http://teachingresources.grantadesign.com/">Teaching Resources</a>
+                <div class="about">
+                    <a href="@Url.Action("About", "Home")"><img src="~/Content/aboutlink.png"/></a>
                 </div>
 
                 <nobr>
