@@ -56,7 +56,7 @@ namespace Granta.MaterialsWall.Controllers
             };
 
             Response.AppendHeader("Content-Disposition", contentDisposition.ToString());
-            return File(stream.ToArray(), "images/jpeg");
+            return File(stream.ToArray(), "image/jpeg");
         }
     }
 }
