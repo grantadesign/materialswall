@@ -1,30 +1,26 @@
 ﻿@model IEnumerable<Granta.MaterialsWall.DataAccess.Card>
 
-@{
-    ViewBag.title = "test";
-}
-
 @Styles.Render("~/Content/wallcard.css")
 
 <div class="navbar">
     <div class="pull-right">
-        <input class="search-query" type="text" placeholder="Search" onkeyup="filter('.row a', this)" />
+        <input class="search-query" type="text" placeholder="Search" onkeyup="filter('.row .cardholder', this)" />
     </div></div>
 
 <div class="row">
     @foreach(var card in Model)
     {
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                <a href="@Url.Action("Index", "Card", new { identifier = card.Identifier })">
-                    <div class="wallcard">
-                        <img src="@Url.Action("Thumbnail", "Image", new { identifier = card.Identifier })"/>
+        <div class="cardholder col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <a href="@Url.Action("Index", "Card", new { identifier = card.Identifier })">
+                <div class="wallcard">
+                    <img src="@Url.Action("Thumbnail", "Image", new { identifier = card.Identifier })"/>
                     
-                        <div class="details">
-                            <div class="materialname">@card.Name</div>
-                            <div class="materialpath">@card.Path</div>
-                        </div>
-                    </div></a>
-            </div>
+                    <div class="details">
+                        <div class="materialname">@card.Name</div>
+                        <div class="materialpath">@card.Path</div>
+                    </div>
+                </div></a>
+        </div>
     }
 </div>
 
