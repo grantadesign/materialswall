@@ -31,7 +31,14 @@
                 <div class="about" style="float:left">
                     @Html.ActionLink("About the materials collection", "About", "Home")
                 </div>
-                @RenderSection("customFooter", required: false)
+
+                <div class="footer">
+                    <a href="http://www.grantadesign.com">Granta Design</a>
+                    |
+                    <a href="http://www.grantadesign.com/jobs/">Careers</a>
+                    |
+                    <a href="http://teachingresources.grantadesign.com/">Teaching Resources</a>
+                </div>
 
                 <nobr>
                     &copy; <a href="http://www.grantadesign.com">Granta Design</a> @(DateTime.Now.Year) All rights reserved

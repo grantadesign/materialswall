@@ -41,6 +41,18 @@
             </div>
         }
 
+        @if (@Model.Sample != null)
+        {
+            <div class="data">
+                <div class="heading">
+                    Sample
+                </div>
+                <div class="value">
+                    @Model.Sample
+                </div>
+            </div>
+        }
+
         @if (@Model.Source != null)
         {
             <div class="data">
@@ -71,13 +83,3 @@
         }
     </div>
 </div>
-
-@section customFooter{
-    <div class="footer">
-        <a href="http://www.grantadesign.com">Granta Design</a>
-        |
-        <a href="http://www.grantadesign.com/jobs/">Careers</a>
-        |
-        <a href="http://teachingresources.grantadesign.com/">Teaching Resources</a>
-    </div>
-}

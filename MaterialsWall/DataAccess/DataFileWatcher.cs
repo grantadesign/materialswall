@@ -58,23 +58,43 @@ namespace Granta.MaterialsWall.DataAccess
         {
             string dataFilePath = Path.Combine(dataFileDirectory, DataFileName);
             string[] lines = File.ReadAllLines(dataFilePath);
-            return lines.Skip(1).Select(ParseCard).ToList();
+            return lines.Skip(1).Select(ParseCard).Where(c => c != null).ToList();
         }
 
         private Card ParseCard(string line)
         {
             string[] parts = line.Split('\t');
+            var identifier = GetValueOrNullIfNotSet(parts[4]);
+
+            if (identifier == null)
+            {
+                return null;
+            }
+
             return new Card
             {
-                Identifier = Guid.NewGuid(),
+                Identifier = Guid.Parse(identifier),
                 Name = GetValueOrNullIfNotSet(parts[0]),
-                Path = GetValueOrNullIfNotSet(parts[7]),
-                Description = GetValueOrNullIfNotSet(parts[3]),
-                TypicalUses = GetValueOrNullIfNotSet(parts[4]),
-                Source = GetValueOrNullIfNotSet(parts[6]),
-//                Sample = GetValueOrNullIfNotSet(parts[8]),
-                Links = new[] {"http://a.sapmple.link"}
+                ImageName = GetValueOrNullIfNotSet(parts[3]),
+                Description = GetValueOrNullIfNotSet(parts[5]),
+                TypicalUses = GetValueOrNullIfNotSet(parts[6]),
+                Sample = GetValueOrNullIfNotSet(parts[7]),
+                Source = GetValueOrNullIfNotSet(parts[8]),
+                Path = GetValueOrNullIfNotSet(parts[9]),
+                Links = GetLinks(parts)
             };
+        }
+
+        private string[] GetLinks(string[] parts)
+        {
+            string[] links =
+            {
+                GetValueOrNullIfNotSet(parts[10]),
+                GetValueOrNullIfNotSet(parts[11]),
+                GetValueOrNullIfNotSet(parts[12])
+            };
+
+            return links.Where(l => l != null).ToArray();
         }
 
         private string GetValueOrNullIfNotSet(string value)

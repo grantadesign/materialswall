@@ -1,0 +1,157 @@
+Title / Label	MayFly Sample	ID	Photo file name	GUID	Description	Typical uses	Sample	Source	MaterialUniverse Path	See also 1	See also 2	See also 3	www.materialswall.grantadesign.com/card/index/
+Elastomeric rubber	No	39	mat39.jpg	8ac3f988-efe0-47d2-a1fc-7663b01a7c98	"Thermoset rubbers include natural rubber, nitrile rubber."		Silicone elastomer?		Polymers > Elastomer > Thermoset elastomers (rubber)				www.materialswall.grantadesign.com/card/index/8ac3f988-efe0-47d2-a1fc-7663b01a7c98
+Laser-cut fiberboard	No	61	mat61.jpg	8ec3b9af-3c97-46e4-b8ea-cf216226d40d				Miriam Bereson Design	Hybrids > Natural materials > Wood				www.materialswall.grantadesign.com/card/index/8ec3b9af-3c97-46e4-b8ea-cf216226d40d
+Pure tin	Yes	1	mat1.jpg	120550d4-8bd7-43e2-b0b7-4bc5171b534d	"Tin is more commonly known when alloyed with copper as bronze, but in its pure form is useful for its chemical stability."	Storage tanks for chemicals and pharmeceuticals. Electrodes and fuse wire. As a coating for steel sheet ('tin plate')	This sample is 100% pure tin. You can gently deform it to hear 'tin cry'. This crackling sound results from crystals deforming by 'twinning'.	Nousaku Zizai	Metals & alloys > Non-ferrous > Tin	http://www.doitpoms.ac.uk/ldplib/acoustic/video.php			www.materialswall.grantadesign.com/card/index/120550d4-8bd7-43e2-b0b7-4bc5171b534d
+3D glass fiber weave	Yes	2	mat2.jpg	71af4368-58e4-4f36-bab1-29e85f49f0d1	"3D glass fiber weaves use the technology behind velvet weaving to create a stiff, lightweight panel with high bending strength. The woven fabric is impregnated with a thermoset resin, which is drawn up into the fibers by capillary action causing the panel to rise to the pre-set height."	The Rail cars of the São Paulo Monorail use 3D glass fibers to reduce weight of their interiors.			Fibers & particulates > Ceramic > Fiber	http://www.compositesmanufacturingblog.com/2013/02/3d-glass-fabrics-are-on-the-fast-track/			www.materialswall.grantadesign.com/card/index/71af4368-58e4-4f36-bab1-29e85f49f0d1
+Alumina	Yes	5	mat5.jpg	33007b85-fe58-481f-9331-88e8584ef8ab	"Alumina (Al2O3) is the workhorse of the ceramics industry. Low cost, easy to produce, it can be used in high temperature environments, maintaining excellent wear resistance and chemical resistance."	"Spark plugs, electrical insulators, high temperature refractory applications."	These parts have been sintered to form their final shape	Anderman Ceramics	Ceramics & glasses > Technical ceramics > Alumina	http://www.britannica.com/EBchecked/topic/17897/alumina			www.materialswall.grantadesign.com/card/index/33007b85-fe58-481f-9331-88e8584ef8ab
+CFRP	Yes	22	mat22.jpg	766f091b-62af-455c-820d-819d3744f5e6	"Carbon fiber reinforced polymers offer the highest strength and stiffness of the plastic composites, but are considerably more expensive. Expoxy is the most common material for the matrix"	"Light weight structural members for aerospace, automotive and high performance sports equipment."	"This woven fiber composite uses continuous fibers, which offer even greater performance."	Xperion Aerospace	Hybrids > Copmosites > Polymer				www.materialswall.grantadesign.com/card/index/766f091b-62af-455c-820d-819d3744f5e6
+Copper mesh	Yes	30	mat30.jpg	9ac08240-950b-4220-8ee4-8e2e4f9c6f47	"Copper is a reddish, extremely ductile metal with high heat and electrical conductivity. It is the ductility of copper that makes it suitable for expanded metal mesh processing, which uses a pressured slitting and stretching process to transform solid metal sheets and coils into expanded mesh."	Architectural solar screens: The Public library of Des Moines (Iowa) is clad in in copper mesh for sun shading. Also commonly used for sculptures.			Metals & alloys > Non-ferrous > Copper	http://greensource.construction.com/projects/0704_centrallibrary.asp			www.materialswall.grantadesign.com/card/index/9ac08240-950b-4220-8ee4-8e2e4f9c6f47
+Cork	Yes	31	mat31.jpg	f9b32e7f-d61e-4f4f-80d9-01ee82bd3189	"The bark of a type of oak tree, cork is a natural closed-cell foam, which is waterproof and stable in many chemical environments, and fire resistant."	"Bottle stoppers, floats, flooring, insulation, road surfaces, vibration damping."	"This cork is made in three sections, reducing the chances of a defect causing complete failue."		Hybrids > Natural materials > Cork				www.materialswall.grantadesign.com/card/index/f9b32e7f-d61e-4f4f-80d9-01ee82bd3189
+Glass / epoxy crossply composite	Yes	49	mat49.jpg	a35f39b0-a4e7-4ce3-9d20-448124be9e1c	Continuous glass fibre embedded in a thermoset plastic matrix	"Sports equipment such as skis and raquets, boat hulls"			Hybrids > Composites > Polymer				www.materialswall.grantadesign.com/card/index/a35f39b0-a4e7-4ce3-9d20-448124be9e1c
+Iridescent polymer film	Yes	58	mat58.jpg	7ab748d0-97e9-4fcf-91d7-a5624a765cd1	Produced through colloidal crystalization		color is black sea blue	Dichrolam					www.materialswall.grantadesign.com/card/index/7ab748d0-97e9-4fcf-91d7-a5624a765cd1
+Nitinol	Yes	73	mat73.jpg	bf96e4e6-7722-4ff5-b3d5-17d06cb6067d	"Nitinol is a shape memory alloys which can remember a previous shape, and return to it when heated. Alloys can be tailored to transorm at a set temperature. They also have excellent corrosion resistance and good properties at elevated temperatures."	"Biomedical applications such as stents and blood clot filters, controllers for fluid systems, eyeglasses that can recover from being bent."	"Try bending this sample gently, then droping it in hot water."	"Memry, ASM"	Metals & alloys > Non-ferrous > Nickel				www.materialswall.grantadesign.com/card/index/bf96e4e6-7722-4ff5-b3d5-17d06cb6067d
+Open-cell aluminum foam	Yes	79	mat79.jpg	cc24b27c-5b3d-40a0-8fce-36d5b0880d9b	"Light and stiff, with good energy-absorbing characteristics"	"Cars and trains, cores for sandwich panels, open-celled foams have a large surface are so are useful for heat exchangers."	"These two samples are open-celled, with two different cell sizes"		Hybrids > Foams > Metal				www.materialswall.grantadesign.com/card/index/cc24b27c-5b3d-40a0-8fce-36d5b0880d9b
+PMMA (acrylic)	Yes	90	mat90.jpg		Poly(methyl methacrylate) is the transparent polymer that most closely resembles glass in its transparency and weather resistance.	"It was used during World War II for aircraft cockpit canopies. Today is is regularly used in medical implants because of its biocompatibility, for glasses and contact lenses, compact discs."			polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+Polycarbonate lattice	Yes	95	mat95.jpg	b3430290-08f9-440a-8ca7-5610b1d9fce6					Polymers > Plastics > Thermoplastics				www.materialswall.grantadesign.com/card/index/b3430290-08f9-440a-8ca7-5610b1d9fce6
+Recycled polyester fabric	Yes	112	mat112.jpg	e17c8a65-a553-4fbf-a97f-3c52eeea4c0c	Polyester accounts for the largest percentage of polymer fiber production. It is therefore …				Polymers > Plastics > Thermoplastics	http://blog.grantadesign.com/material/paper/	http://teachingresources.grantadesign.com/Sustainability		www.materialswall.grantadesign.com/card/index/e17c8a65-a553-4fbf-a97f-3c52eeea4c0c
+Soda lime glass	Yes	124	mat124.jpg	3465437b-06b3-4f5f-825e-d96bc1a35c93	"Soda lime glass is most common type of glass. It is cheap, has a low melting point, and is easy to manufacture."	"Windows, bottles, light bulbs"			Ceramics & glasses > Glasses > Soda lime				www.materialswall.grantadesign.com/card/index/3465437b-06b3-4f5f-825e-d96bc1a35c93
+Woven aramid fibers	Yes	142	mat142.jpg	c726946d-ab41-48f2-8fc6-b730ecc233f0	"Aramid fibers, commonly known as Kevlar, as produced so that the polymer chains are aligned with the axis of the fiber. This gives them extremely high strength."	"Body armor, such as bullet proof vests, and bomb protection. Also used in polymer matrix composites. The US Pentagon building has been reinforced with aramid fiber for blast protection."			Fibers & particulates > Polymer > Aramid	http://www.britannica.com/EBchecked/topic/32063/aramid			www.materialswall.grantadesign.com/card/index/c726946d-ab41-48f2-8fc6-b730ecc233f0
+Woven stainless steel	Yes	154	mat154.jpg	98a5f5a2-e7dc-46fb-9fc4-7dd6436366cc					Metals & alloys > Ferrous > Stainless steel				www.materialswall.grantadesign.com/card/index/98a5f5a2-e7dc-46fb-9fc4-7dd6436366cc
+Zirconia foam	Yes	155	mat155.jpg	79a30ac2-127b-4012-a0b9-41b278ae0722	"Zirconium Oxide (ZrO2) has an exceptionally high melting point of 2760°C, "	Refractory 	This sample is a plug used for filtering molten metals.	Anderman Ceramics	Hybrids > Foams > Ceramic	http://www.earthwaterfire.com/zirconia_ceramics.htm			www.materialswall.grantadesign.com/card/index/79a30ac2-127b-4012-a0b9-41b278ae0722
+ABS		3			acrylonitrile butadiene styrene				polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+acetal (POM)		4			polyoxymethylene				polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+alumina face / alumina foam core		6					sandwich panel		hybrids > foams > ceramic				www.materialswall.grantadesign.com/card/index/
+alumina reinforced with high alumina fibers		7					rigid prefired sheet to remove all organic binder and is stable to moisture attack	ZIRCAR Refractory Composites					www.materialswall.grantadesign.com/card/index/
+aluminum		8							metals & alloys > non-ferrous > aluminum				www.materialswall.grantadesign.com/card/index/
+aluminum foil		9							metals & alloys > non-ferrous > aluminum				www.materialswall.grantadesign.com/card/index/
+aluminum honeycomb		10							hybrids > honeycombs > expanded				www.materialswall.grantadesign.com/card/index/
+aluminum lattice		11							metals & alloys > non-ferrous > aluminum				www.materialswall.grantadesign.com/card/index/
+aramid fiber		12											www.materialswall.grantadesign.com/card/index/
+aramid honeycomb		13							hybrids > honeycombs > expanded				www.materialswall.grantadesign.com/card/index/
+aramid honeycomb		14							hybrids > honeycombs > expanded				www.materialswall.grantadesign.com/card/index/
+aramid paper honeycomb		15					honeycomb before opening and impregnation	Aramicore					www.materialswall.grantadesign.com/card/index/
+balsa		16							hybrids > natural materials > wood				www.materialswall.grantadesign.com/card/index/
+biodegradable polymer		17							polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+braided fiberglass		18				used for thermal protection		Davlyn	Fibers & particulates > Ceramic > Fiber				www.materialswall.grantadesign.com/card/index/
+brass		19							metals & alloys > non-ferrous > copper				www.materialswall.grantadesign.com/card/index/
+brass mesh		20							metals & alloys > non-ferrous > copper				www.materialswall.grantadesign.com/card/index/
+cast iron		21						old bathtub	metals & alloys > ferrous > cast iron				www.materialswall.grantadesign.com/card/index/
+closed-cell aluminum foam		23					two types of cell architecture		hybrids > foams > metal				www.materialswall.grantadesign.com/card/index/
+closed-cell nickel foam		24					   	INCO					www.materialswall.grantadesign.com/card/index/
+coated copper		25						Outokumpu Architectural					www.materialswall.grantadesign.com/card/index/
+co-molded kraton and polypropylene		26							polymers > elastomer>plastic > thermoplastics				www.materialswall.grantadesign.com/card/index/
+compression-molded polymer gel		27							polymers				www.materialswall.grantadesign.com/card/index/
+concrete canvas		28					"consists of a three layered structure: fiber, 3D fiber matrix in formulated concrete mix, PVC backing"	Concrete Canvas					www.materialswall.grantadesign.com/card/index/
+copper		29							metals & alloys > non-ferrous > copper				www.materialswall.grantadesign.com/card/index/
+cork / rubber sheet		33											www.materialswall.grantadesign.com/card/index/
+cork tape		34											www.materialswall.grantadesign.com/card/index/
+corrugated polypropylene		35					two different colors		polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+cotton fiber / phenolic resin composite		36											www.materialswall.grantadesign.com/card/index/
+cuttlefish		37											www.materialswall.grantadesign.com/card/index/
+cyclic olefin copolymer (COC)		38						Topas Advanced Materials	polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+fiber-reinforced polypropylene		40						Critt Polymeres Picardie	polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+fiber-reinforced polystyrene		41						Critt Polymeres Picardie	polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+flexible graphite		42											www.materialswall.grantadesign.com/card/index/
+flexible non-woven polyester face / polypropylene honeycomb core		43					sandwich panel	Nidaplast Composites	hybrids > honeycombs > extruded				www.materialswall.grantadesign.com/card/index/
+fluid foam in polyurethane bladder		44					fluid foam (floam) contains small polystyrene beads	"Dielectric, a SPX Division"					www.materialswall.grantadesign.com/card/index/
+friction-stir-welded steel		45						TWI					www.materialswall.grantadesign.com/card/index/
+galvanized steel		46							metals & alloys > ferrous > coated steel				www.materialswall.grantadesign.com/card/index/
+garnet		47						"Adirondacks, New York"					www.materialswall.grantadesign.com/card/index/
+GFRP face / polypropylene honeycomb core		48			GFRP = glass-fiber reinforced polymer		sandwich panel	Nidaplast Composites and Carlier Plastiques	hybrids > honeycombs > extruded				www.materialswall.grantadesign.com/card/index/
+glass bead / polymer tape		50											www.materialswall.grantadesign.com/card/index/
+glass fiber / aramid honeycomb		51											www.materialswall.grantadesign.com/card/index/
+glass-fiber reinforced recycled polypropylene		52						EAC Technologies					www.materialswall.grantadesign.com/card/index/
+graphite felt		53						National Electrical Carbon Products					www.materialswall.grantadesign.com/card/index/
+hemp and flax fiber		54			renewable reinforcements			"BAM, Berlin"	fibers & particulates > natural > 				www.materialswall.grantadesign.com/card/index/
+hemp fiber / thermoplastic composite		55					eco-composite	"BAM, Berlin"					www.materialswall.grantadesign.com/card/index/
+holographic PVC film		56											www.materialswall.grantadesign.com/card/index/
+hydrogel		57											www.materialswall.grantadesign.com/card/index/
+jet		59					fossilized monkey-puzzle tree (Araucaria araucana species)	"Runswick, Yorkshire"					www.materialswall.grantadesign.com/card/index/
+joining thermoplastic elastomer to thermoplastic		60						VTC Elastoteknik					www.materialswall.grantadesign.com/card/index/
+laser-cut stainless steel		62							metals & alloys > ferrous > stainless steel				www.materialswall.grantadesign.com/card/index/
+liquid crystal film		63							polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+low-resilience polyurethane		64						LA Robe Protection and Tempur	polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+metal face / elastomer core		65					sandwich panel		hybrids > composites > metal				www.materialswall.grantadesign.com/card/index/
+metal-coated glass		66						CKS					www.materialswall.grantadesign.com/card/index/
+mica-filled polymer		67						Mearlin Hi-lite	polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+mullite		68					thermocouple tube	Anderman Ceramics	ceramics & glasses > technical ceramics > mullite				www.materialswall.grantadesign.com/card/index/
+natural fiber composite face / PP honeycomb core		69					"sandwich panel, PP = polypropylene"	Econcore					www.materialswall.grantadesign.com/card/index/
+near net shape powder metallurgy		70					316L gears and Ancorsteel 4300 powder	EPMA	metals & alloys > ferrous > stainless steel				www.materialswall.grantadesign.com/card/index/
+needle-punched polypropylene		71							polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+nickel-coated carbon fibers		72											www.materialswall.grantadesign.com/card/index/
+nitinol		74			Nitinol in its superelastic form 	Springs		"Memry, ASM"	metals & alloys > non-ferrous > nickel				www.materialswall.grantadesign.com/card/index/
+non-woven glass veil impregnated with hot melt adhesive		75						AIK Laminates					www.materialswall.grantadesign.com/card/index/
+non-woven hemp		76			eco-material for acoustic insulation	eco-material for acoustic insulation		"BAM, Berlin"	fibers & particulates > natural > 				www.materialswall.grantadesign.com/card/index/
+nylon mesh		77							polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+nylon-coated woven carbon fiber		78											www.materialswall.grantadesign.com/card/index/
+open-cell copper foam		80											www.materialswall.grantadesign.com/card/index/
+open-cell nickel foam		81						INCO		http://blog.grantadesign.com/material/paper/			www.materialswall.grantadesign.com/card/index/
+open-cell nickel foam		82						INCO					www.materialswall.grantadesign.com/card/index/
+oriented extruded polypropylene		83							polymers > plastics > thermoplastics	http://blog.grantadesign.com/material/pmma/			www.materialswall.grantadesign.com/card/index/
+PEEK		84			polyetheretherketone				polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+perforated mild steel		85							metals & alloys > ferrous > low carbon steel				www.materialswall.grantadesign.com/card/index/
+permagraphics on aluminum		86											www.materialswall.grantadesign.com/card/index/
+PET + PBT blend		87					polyethylene terephthalate + polybutylene terephthalate blend	Dupont					www.materialswall.grantadesign.com/card/index/
+PET face / paper honeycomb core		88					sandwich panel	Honipan					www.materialswall.grantadesign.com/card/index/
+photovoltaic film		89											www.materialswall.grantadesign.com/card/index/
+polyamide (nylon)		91							polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+polycarbonate (PC)		92					two colors: transparent and black		polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+polycarbonate (PC)		93					black		polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+polycarbonate face / aluminum honeycomb core		94					sandwich panel	Mykon	hybrids > honeycombs > expanded				www.materialswall.grantadesign.com/card/index/
+polyester / acrylic laminate		96											www.materialswall.grantadesign.com/card/index/
+polyester mesh		97											www.materialswall.grantadesign.com/card/index/
+polyethylene (PE)		98							polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+polymer gel		99											www.materialswall.grantadesign.com/card/index/
+polymer gel		100											www.materialswall.grantadesign.com/card/index/
+polypropylene (PP)		101					transparency results from the use of additives		polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+polystyrene (PS)		102							polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+polyurethane-coated polycarbonate		103			"velvetron texture gives chrome a warmer, liquid-like look"			PPG Industries	polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+PP + PET fleece face / PP honeycomb core		104					"sandwich panel, PP = polypropylene, PET = polyethylene terephthalate"	ThermHex					www.materialswall.grantadesign.com/card/index/
+PP face / PP honeycomb core		105					"sandwich panel, PP = polypropylene"	Econcore					www.materialswall.grantadesign.com/card/index/
+PTFE (Teflon)		106			polytetrafluoroethylene				polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+PTFE tape		107			polytetrafluoroethylene				polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+PVC (vinyl)		108			polyvinylchloride				polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+PVC-coated woven PE		109							polymers > plastics > thermoplastics	http://blog.grantadesign.com/material/paper/			www.materialswall.grantadesign.com/card/index/
+recycled bicycle tire		110								http://blog.grantadesign.com/material/paper/			www.materialswall.grantadesign.com/card/index/
+recycled plastic		111						Made of Waste 					www.materialswall.grantadesign.com/card/index/
+reinforced alumina		113							hybrids > composites > ceramic				www.materialswall.grantadesign.com/card/index/
+resin-impregnated paper face / aluminum honeycomb core		114					sandwich panel	Honipan					www.materialswall.grantadesign.com/card/index/
+resin-impregnated paper face / paper honeycomb core		115					sandwich panel	Honipan					www.materialswall.grantadesign.com/card/index/
+rigid polyurethane (PUR)		116							polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+ripstop nylon		117							polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+SEBS		118			styrene ethylene butylene styrene block copolymer			VTC Elastoteknik	polymers > elastomer > thermoplastic elastomers (tpe)				www.materialswall.grantadesign.com/card/index/
+silicon carbide foam		119							hybrids > foams > ceramic				www.materialswall.grantadesign.com/card/index/
+silicon wafer		120						Technical University of Denmark (DTU)	ceramics & glasses > technical ceramics > silicon				www.materialswall.grantadesign.com/card/index/
+silicone gel 		121						Momentive (GE Bayer Silicones)	polymers > elastomer > thermoset elastomers (rubber)				www.materialswall.grantadesign.com/card/index/
+silicone gel 		122						Momentive (GE Bayer Silicones)	polymers > elastomer > thermoset elastomers (rubber)				www.materialswall.grantadesign.com/card/index/
+silicone impregnated glass fleece face / mica core		123					sandwich panel	COGEBI					www.materialswall.grantadesign.com/card/index/
+sodium zirconium phosphate		125											www.materialswall.grantadesign.com/card/index/
+spruce		126					cut parallel to the axis and at 45?		hybrids > natural materials > wood				www.materialswall.grantadesign.com/card/index/
+stainless steel		127							metals & alloys > ferrous > stainless steel				www.materialswall.grantadesign.com/card/index/
+stainless steel mesh		128							metals & alloys > ferrous > stainless steel	http://blog.grantadesign.com/material/paper/			www.materialswall.grantadesign.com/card/index/
+stainless steel powder		129			used for near net shape powder metallurgy (please do not open container)			EPMA	metals & alloys > ferrous > stainless steel				www.materialswall.grantadesign.com/card/index/
+synthetic rubber (SBR)		130			styrene butadiene rubber			Dalsouple	polymers > elastomer > thermoset elastomers (rubber)				www.materialswall.grantadesign.com/card/index/
+thermochromic paper		131											www.materialswall.grantadesign.com/card/index/
+thermoplastic composite		132						Works	hybrids > composites > polymer				www.materialswall.grantadesign.com/card/index/
+thermoplastic elastomer soft coat		133						BERLAC - Lacquers and Effects	polymers > elastomer > thermoplastic elastomers (tpe)	http://blog.grantadesign.com/material/bone/			www.materialswall.grantadesign.com/card/index/
+thin carbon fiber mat		134							Fibers & particulates > Ceramic > Fiber				www.materialswall.grantadesign.com/card/index/
+titanium		135							metals & alloys > non-ferrous > titanium				www.materialswall.grantadesign.com/card/index/
+titanium hip implant and uhmwpe acetabular cup		136					titanium hip implant and ultra high molecular weight polyethylene acetabular cup 						www.materialswall.grantadesign.com/card/index/
+TPE / absorbant gel compound		137					thermoplastic elastomer / super-absorbant gel						www.materialswall.grantadesign.com/card/index/
+transparent silicone		138						Momentive (GE Bayer Silicones)	polymers > elastomer > thermoset elastomers (rubber)				www.materialswall.grantadesign.com/card/index/
+unidirectional carbon fiber / epoxy composite		139							hybrids > composites > polymer				www.materialswall.grantadesign.com/card/index/
+unidirectional glass fiber / epoxy composite		140											www.materialswall.grantadesign.com/card/index/
+wood fiber / polypropylene composite		141											www.materialswall.grantadesign.com/card/index/
+woven basalt fabric		143					"used in laminates production for fire, sound and heat protection"	Kamenny Vek					www.materialswall.grantadesign.com/card/index/
+woven carbon fiber / epoxy composite		144							hybrids > composites > polymer				www.materialswall.grantadesign.com/card/index/
+woven carbon fiber / nylon (PA6) composite		145							hybrids > composites > polymer				www.materialswall.grantadesign.com/card/index/
+woven carbon fiber prepreg		146											www.materialswall.grantadesign.com/card/index/
+woven GFRP face / compression rohacell core		147					"sandwich panel, GFRP = glass-fiber reinforced polymer"	AIK Laminates					www.materialswall.grantadesign.com/card/index/
+woven glass fiber		148							Fibers & particulates > Ceramic > Fiber				www.materialswall.grantadesign.com/card/index/
+woven glass fiber / polypropylene composite		149							polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+woven nylon / copper composite		150											www.materialswall.grantadesign.com/card/index/
+woven PE tape		151											www.materialswall.grantadesign.com/card/index/
+woven polypropylene sheet		152						Vantage Polymers	polymers > plastics > thermoplastics				www.materialswall.grantadesign.com/card/index/
+woven PTFE-coated glass fiber		153											www.materialswall.grantadesign.com/card/index/
+magnesium										http://blog.grantadesign.com/material/bioabsorbable-magnesium-alloys-pushing-the-boundaries-of-medical-materials/			
+Silly putty										http://blog.grantadesign.com/material/putty/			
