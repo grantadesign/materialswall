@@ -149,6 +149,9 @@
     <Compile Include="Controllers\CardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="DataAccess\Card.cs" />
+    <Compile Include="DataAccess\CardRepository.cs" />
+    <Compile Include="DataAccess\DataFileWatcher.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -237,12 +240,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Card\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{fbc77814-acfc-4067-a1e6-60673ac6f2d3}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

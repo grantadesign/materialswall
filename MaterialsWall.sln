@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialsWall", "MaterialsWall\MaterialsWall.csproj", "{BB8F72FB-872F-4D5F-9F56-56794A18DE04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{FBC77814-ACFC-4067-A1E6-60673AC6F2D3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,10 +13,6 @@ Global
 		{BB8F72FB-872F-4D5F-9F56-56794A18DE04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB8F72FB-872F-4D5F-9F56-56794A18DE04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB8F72FB-872F-4D5F-9F56-56794A18DE04}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FBC77814-ACFC-4067-A1E6-60673AC6F2D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FBC77814-ACFC-4067-A1E6-60673AC6F2D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FBC77814-ACFC-4067-A1E6-60673AC6F2D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FBC77814-ACFC-4067-A1E6-60673AC6F2D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
