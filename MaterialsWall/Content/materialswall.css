@@ -55,8 +55,5 @@ hr {
 
 .about {
     text-align: center;
-}
-
-.about a {
-    font-weight: bolder;
+    margin-bottom: 4px;
 }
