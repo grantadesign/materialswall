@@ -28,9 +28,14 @@
         <div class="container">
             <div class="footer">
                 <hr/>
-                <div class="about">
-                    <a href="@Url.Action("About", "Home")"><img src="~/Content/aboutlink.png"/></a>
-                </div>
+                @if (!IsSectionDefined("aboutfooter"))
+                {
+                    <div class="about">
+                        <a href="@Url.Action("About", "Home")"><img src="~/Content/aboutlink.png"/></a>
+                    </div>
+                }
+
+                @RenderSection("aboutfooter", required : false);
 
                 <nobr>
                     &copy; <a href="http://www.grantadesign.com">Granta Design</a> @(DateTime.Now.Year)
