@@ -10,7 +10,7 @@ namespace Granta.MaterialsWall.Images
 
     public sealed class ImagePathFormatter : IImagePathFormatter
     {
-        private const string MissingImageName = "unknown.jpg";
+        private const string MissingImageName = "unknown.png";
 
         public string GetImagePath(HttpServerUtilityBase server, string imageName)
         {
