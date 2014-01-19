@@ -6,11 +6,11 @@
 
 @section styles
 {
-    @Styles.Render("~/Content/card.css")
+    @Styles.Render("~/bundles/cards")
 }
 
 <div class="card">
-    <img src="@Url.Action("Index", "Image", new { identifier = @Model.Identifier })" />
+    <img src="@Url.Action("Index", "Image", new { identifier = @Model.Identifier })" title="@Model.Name" />
                     
     <div class="details">
         <div class="materialname">@Model.Name</div>
