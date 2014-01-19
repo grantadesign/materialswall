@@ -2,9 +2,12 @@
     ViewBag.Title = "About";
 }
 
-@Styles.Render("~/Content/about.css")
+@section styles
+{
+    @Styles.Render("~/Content/about.css")
+}
 
-<img class="piccie" src="~/Content/materialswall.jpg"/>
+<img class="piccie" src="~/Content/materialswall.jpg" title="Granta Materials Wall"/>
 
 <h2>About The Materials Collection</h2>
 

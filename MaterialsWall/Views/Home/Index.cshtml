@@ -1,6 +1,9 @@
 ﻿@model IEnumerable<Granta.MaterialsWall.DataAccess.Card>
 
-@Styles.Render("~/Content/wallcard.css")
+@section styles
+{
+    @Styles.Render("~/Content/wallcard.css")
+}
 
 <div class="navbar">
     <div class="pull-right">
@@ -25,4 +28,7 @@
     }
 </div>
 
-@Scripts.Render("~/Scripts/searchfilter.js")
+@section scripts
+{
+    @Scripts.Render("~/Scripts/searchfilter.js")
+}

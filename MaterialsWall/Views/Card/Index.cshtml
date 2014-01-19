@@ -4,7 +4,10 @@
     ViewBag.title = Model.Name;
 }
 
-@Styles.Render("~/Content/card.css")
+@section styles
+{
+    @Styles.Render("~/Content/card.css")
+}
 
 <div class="card">
     <img src="@Url.Action("Index", "Image", new { identifier = @Model.Identifier })" />
