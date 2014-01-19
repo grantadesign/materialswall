@@ -1,6 +1,13 @@
 ﻿@model IEnumerable<Granta.MaterialsWall.DataAccess.Card>
 
-@Styles.Render("~/Content/walllabel.css")
+@section styles
+{
+    @Styles.Render("~/Content/walllabel.css")
+}
+
+<div class="slider">
+    Label width: <input type="range" name="labelWidth" min="350" max="800" value="580" onchange="javascript:changeLabelWidth(this);">
+</div>
 
 @foreach (var card in @Model)
 {
@@ -16,4 +23,14 @@
             }
         </div>
     </div>
+}
+
+@section scripts
+{
+    <script>
+        function changeLabelWidth(slider) {
+            var width = $(slider).val();
+            $('.walllabel').width(width);
+        }
+    </script>
 }

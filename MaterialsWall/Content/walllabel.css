@@ -1,4 +1,15 @@
-﻿.walllabel {
+﻿input[type="range"] {
+    width: 400px;
+}
+
+.slider {
+    line-height: 1;
+    vertical-align: top;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.walllabel {
     border: 1px solid black;
     width: 580px;
     height: 140px;
