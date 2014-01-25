@@ -3,13 +3,17 @@
 
     $(containerClass).each(function () {
         var materialName = $(this).find(".materialname").text();
-        var indexOfSearchText = materialName.search(new RegExp(searchText, "i"));
+        var indexInName = materialName.search(new RegExp(searchText, "i"));
 
-        if (indexOfSearchText > -1) {
+        if (indexInName > -1) {
             $(this).show();
         }
         else {
             $(this).hide();
         }
     });
+
+    var visibleMaterialsCount = $(containerClass).filter(':visible').length;
+    var text = visibleMaterialsCount == 1 ? "1 material" : visibleMaterialsCount + " materials";
+    $(".materialscount").text(text);
 }
