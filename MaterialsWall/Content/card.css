@@ -44,6 +44,7 @@
     color: #666;
     font-weight: bold;
     font-size: xx-large;
+    text-transform: capitalize;
 }
 
 .materialpath {
@@ -52,4 +53,5 @@
     font-weight: bold;
     font-size: small;
     text-wrap: normal;
+    text-transform: capitalize;
 }
