@@ -61,10 +61,30 @@ namespace Granta.MaterialsWall.DataAccess
             return lines.Skip(1).Select(ParseCard).Where(c => c != null).ToList();
         }
 
+        private const int includeInWallColumn = 1;
+        private const int guidColumn = 3;
+        private const int nameColumn = 0;
+        private const int idColumn = 2;
+        private const int descriptionColumn = 4;
+        private const int typicalUsesColumn = 5;
+        private const int sampleColumn = 6;
+        private const int sourceColumn = 7;
+        private const int materialUniversePathColumn = 8;
+        private const int link1Column = 9;
+        private const int link2Column = 10;
+        private const int link3Column = 11;
+
         private Card ParseCard(string line)
         {
             string[] parts = line.Split('\t');
-            var identifier = GetValueOrNullIfNotSet(parts[4]);
+            var includeInWall = GetValueOrNullIfNotSet(parts[includeInWallColumn]);
+
+            if (string.IsNullOrEmpty(includeInWall) || !string.Equals(includeInWall, "yes", StringComparison.InvariantCultureIgnoreCase))
+            {
+                return null;
+            }
+
+            var identifier = GetValueOrNullIfNotSet(parts[guidColumn]);
 
             if (identifier == null)
             {
@@ -74,13 +94,13 @@ namespace Granta.MaterialsWall.DataAccess
             return new Card
             {
                 Identifier = Guid.Parse(identifier),
-                Name = GetValueOrNullIfNotSet(parts[0]),
-                ImageName = GetValueOrNullIfNotSet(parts[3]),
-                Description = GetValueOrNullIfNotSet(parts[5]),
-                TypicalUses = GetValueOrNullIfNotSet(parts[6]),
-                Sample = GetValueOrNullIfNotSet(parts[7]),
-                Source = GetValueOrNullIfNotSet(parts[8]),
-                Path = GetValueOrNullIfNotSet(parts[9]),
+                Id = GetValueOrNullIfNotSet(parts[idColumn]),
+                Name = GetValueOrNullIfNotSet(parts[nameColumn]),
+                Description = GetValueOrNullIfNotSet(parts[descriptionColumn]),
+                TypicalUses = GetValueOrNullIfNotSet(parts[typicalUsesColumn]),
+                Sample = GetValueOrNullIfNotSet(parts[sampleColumn]),
+                Source = GetValueOrNullIfNotSet(parts[sourceColumn]),
+                Path = GetValueOrNullIfNotSet(parts[materialUniversePathColumn]),
                 Links = GetLinks(parts)
             };
         }
@@ -89,9 +109,9 @@ namespace Granta.MaterialsWall.DataAccess
         {
             string[] links =
             {
-                GetValueOrNullIfNotSet(parts[10]),
-                GetValueOrNullIfNotSet(parts[11]),
-                GetValueOrNullIfNotSet(parts[12])
+                GetValueOrNullIfNotSet(parts[link1Column]),
+                GetValueOrNullIfNotSet(parts[link2Column]),
+                GetValueOrNullIfNotSet(parts[link3Column])
             };
 
             return links.Where(l => l != null).ToArray();

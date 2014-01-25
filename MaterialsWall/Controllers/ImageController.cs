@@ -67,7 +67,7 @@ namespace Granta.MaterialsWall.Controllers
         private Bitmap GetImage(Guid identifier)
         {
             var card = cardRepository.GetCard(identifier);
-            string imagePath = imagePathFormatter.GetImagePath(Server, card.ImageName);
+            string imagePath = imagePathFormatter.GetImagePath(Server, card.Id);
             var image = new Bitmap(imagePath);
             return image;
         }

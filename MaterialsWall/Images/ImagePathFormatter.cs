@@ -5,23 +5,30 @@ namespace Granta.MaterialsWall.Images
 {
     public interface IImagePathFormatter
     {
-        string GetImagePath(HttpServerUtilityBase server, string imageName);
+        string GetImagePath(HttpServerUtilityBase server, string materialId);
     }
 
     public sealed class ImagePathFormatter : IImagePathFormatter
     {
         private const string MissingImageName = "unknown.png";
 
-        public string GetImagePath(HttpServerUtilityBase server, string imageName)
+        public string GetImagePath(HttpServerUtilityBase server, string materialId)
         {
             string imageDirectory = server.MapPath("~/App_Data/MaterialImages");
-            string imagePath = Path.Combine(imageDirectory, imageName);
-
-            if (!File.Exists(imagePath))
+            
+            if (materialId == null)
             {
-                imagePath = Path.Combine(imageDirectory, MissingImageName);
+                return GetMissingImagePath(imageDirectory);
             }
 
+            string imageName = string.Format("mat{0}.jpg", materialId);
+            string imagePath = Path.Combine(imageDirectory, imageName);
+            return !File.Exists(imagePath) ? GetMissingImagePath(imageDirectory) : imagePath;
+        }
+
+        private string GetMissingImagePath(string imageDirectory)
+        {
+            string imagePath = Path.Combine(imageDirectory, MissingImageName);
             return imagePath;
         }
     }
