@@ -149,6 +149,84 @@
     <Compile Include="App_Start\Ninject\DependencyResolverAdapter .cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Data\data.txt" />
+    <Content Include="App_Data\MaterialImages\mat1.jpg" />
+    <Content Include="App_Data\MaterialImages\mat101.jpg" />
+    <Content Include="App_Data\MaterialImages\mat103.jpg" />
+    <Content Include="App_Data\MaterialImages\mat106.jpg" />
+    <Content Include="App_Data\MaterialImages\mat107.jpg" />
+    <Content Include="App_Data\MaterialImages\mat108.jpg" />
+    <Content Include="App_Data\MaterialImages\mat109.jpg" />
+    <Content Include="App_Data\MaterialImages\mat11.jpg" />
+    <Content Include="App_Data\MaterialImages\mat110.jpg" />
+    <Content Include="App_Data\MaterialImages\mat111.jpg" />
+    <Content Include="App_Data\MaterialImages\mat112.jpg" />
+    <Content Include="App_Data\MaterialImages\mat113.jpg" />
+    <Content Include="App_Data\MaterialImages\mat116.jpg" />
+    <Content Include="App_Data\MaterialImages\mat120.jpg" />
+    <Content Include="App_Data\MaterialImages\mat121.jpg" />
+    <Content Include="App_Data\MaterialImages\mat124.jpg" />
+    <Content Include="App_Data\MaterialImages\mat126.jpg" />
+    <Content Include="App_Data\MaterialImages\mat127.jpg" />
+    <Content Include="App_Data\MaterialImages\mat128.jpg" />
+    <Content Include="App_Data\MaterialImages\mat129.jpg" />
+    <Content Include="App_Data\MaterialImages\mat133.jpg" />
+    <Content Include="App_Data\MaterialImages\mat135.jpg" />
+    <Content Include="App_Data\MaterialImages\mat136.jpg" />
+    <Content Include="App_Data\MaterialImages\mat137.jpg" />
+    <Content Include="App_Data\MaterialImages\mat138.jpg" />
+    <Content Include="App_Data\MaterialImages\mat142.jpg" />
+    <Content Include="App_Data\MaterialImages\mat149.jpg" />
+    <Content Include="App_Data\MaterialImages\mat152.jpg" />
+    <Content Include="App_Data\MaterialImages\mat153.jpg" />
+    <Content Include="App_Data\MaterialImages\mat154.jpg" />
+    <Content Include="App_Data\MaterialImages\mat155.jpg" />
+    <Content Include="App_Data\MaterialImages\mat16.jpg" />
+    <Content Include="App_Data\MaterialImages\mat17.jpg" />
+    <Content Include="App_Data\MaterialImages\mat19.jpg" />
+    <Content Include="App_Data\MaterialImages\mat2.jpg" />
+    <Content Include="App_Data\MaterialImages\mat20.jpg" />
+    <Content Include="App_Data\MaterialImages\mat21.jpg" />
+    <Content Include="App_Data\MaterialImages\mat22.jpg" />
+    <Content Include="App_Data\MaterialImages\mat26.jpg" />
+    <Content Include="App_Data\MaterialImages\mat29.jpg" />
+    <Content Include="App_Data\MaterialImages\mat3.jpg" />
+    <Content Include="App_Data\MaterialImages\mat30.jpg" />
+    <Content Include="App_Data\MaterialImages\mat31.jpg" />
+    <Content Include="App_Data\MaterialImages\mat33.jpg" />
+    <Content Include="App_Data\MaterialImages\mat34.jpg" />
+    <Content Include="App_Data\MaterialImages\mat35.jpg" />
+    <Content Include="App_Data\MaterialImages\mat37.jpg" />
+    <Content Include="App_Data\MaterialImages\mat38.jpg" />
+    <Content Include="App_Data\MaterialImages\mat39.jpg" />
+    <Content Include="App_Data\MaterialImages\mat4.jpg" />
+    <Content Include="App_Data\MaterialImages\mat45.jpg" />
+    <Content Include="App_Data\MaterialImages\mat47.jpg" />
+    <Content Include="App_Data\MaterialImages\mat49.jpg" />
+    <Content Include="App_Data\MaterialImages\mat5.jpg" />
+    <Content Include="App_Data\MaterialImages\mat50.jpg" />
+    <Content Include="App_Data\MaterialImages\mat54.jpg" />
+    <Content Include="App_Data\MaterialImages\mat56.jpg" />
+    <Content Include="App_Data\MaterialImages\mat58.jpg" />
+    <Content Include="App_Data\MaterialImages\mat59.jpg" />
+    <Content Include="App_Data\MaterialImages\mat61.jpg" />
+    <Content Include="App_Data\MaterialImages\mat64.jpg" />
+    <Content Include="App_Data\MaterialImages\mat70.jpg" />
+    <Content Include="App_Data\MaterialImages\mat73.jpg" />
+    <Content Include="App_Data\MaterialImages\mat76.jpg" />
+    <Content Include="App_Data\MaterialImages\mat79.jpg" />
+    <Content Include="App_Data\MaterialImages\mat8.jpg" />
+    <Content Include="App_Data\MaterialImages\mat81.jpg" />
+    <Content Include="App_Data\MaterialImages\mat83.jpg" />
+    <Content Include="App_Data\MaterialImages\mat87.jpg" />
+    <Content Include="App_Data\MaterialImages\mat89.jpg" />
+    <Content Include="App_Data\MaterialImages\mat90.jpg" />
+    <Content Include="App_Data\MaterialImages\mat92.jpg" />
+    <Content Include="App_Data\MaterialImages\mat94.jpg" />
+    <Content Include="App_Data\MaterialImages\mat95.jpg" />
+    <Content Include="App_Data\MaterialImages\mat98.jpg" />
+    <Content Include="App_Data\MaterialImages\mat99.jpg" />
+    <Content Include="App_Data\MaterialImages\unknown.png" />
     <Content Include="Content\about.css" />
     <Content Include="Content\aboutlink.png" />
     <Content Include="Content\materialswall.jpg" />
@@ -208,9 +286,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\MaterialImages\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
