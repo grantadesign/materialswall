@@ -20,15 +20,14 @@ hr {
     background: -moz-linear-gradient(#A64D00, #D98028); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#A64D00, #D98028); /* Standard syntax */
     border-bottom: 1px solid #999;
-    text-transform: uppercase;
     text-align: center;
-    font-size: xx-large;
+    font-size: x-large;
     line-height: 1;
     margin-bottom: 5px;
 }
 
-.jumbotron a, .jumbotron a:hover {
-    color: #003366;
+.jumbotron a, .jumbotron a:link, .jumbotron a:hover, .jumbotron a:visited {
+    color: white;
     text-decoration: none;
 }
 
