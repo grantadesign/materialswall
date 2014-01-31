@@ -5,12 +5,6 @@
     @Styles.Render("~/bundles/wallcards")
 }
 
-<div class="navbar">
-    <div class="pull-right">
-        <input class="search-query" type="text" placeholder="Search" onkeyup="filter('.row .cardholder', this)" />
-    </div>
-</div>
-
 <div class="row">
     @foreach(var card in Model)
     {
@@ -26,10 +20,6 @@
                 </div></a>
         </div>
     }
-</div>
-
-<div class="materialscount">
-    @Model.Count() materials
 </div>
 
 @section scripts

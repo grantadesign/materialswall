@@ -12,8 +12,4 @@
             $(this).hide();
         }
     });
-
-    var visibleMaterialsCount = $(containerClass).filter(':visible').length;
-    var text = visibleMaterialsCount == 1 ? "1 material" : visibleMaterialsCount + " materials";
-    $(".materialscount").text(text);
 }
