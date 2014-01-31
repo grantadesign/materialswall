@@ -18,14 +18,14 @@
             @if (!IsSectionDefined("aboutlink"))
             {
                 <div class="about">
-                    <a href="@Url.Action("About", "Home")" title="About this site..."><span class="glyphicon glyphicon-question-sign"></span></a>
+                    <a href="@Url.Action("About", "Home")" accesskey="a" title="About this site..."><span class="glyphicon glyphicon-question-sign"></span></a>
                 </div>
             }
 
             @RenderSection("aboutlink", required : false)
 
             <div class="container">
-                <a href="@Url.Action("Index", "Home")" title="Granta Materials Collection">
+                <a href="@Url.Action("Index", "Home")" accesskey="h" title="Granta Materials Collection">
                     <img src="~/Content/logo.png"/>
                     <br/>
                     Materials Collection
