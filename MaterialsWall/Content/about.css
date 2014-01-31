@@ -26,3 +26,13 @@ img.piccie {
     border: 1px solid #666;
     padding: 20px;
 }
+
+.links a {
+    white-space: nowrap;
+    padding-right: 2px;
+}
+
+.links a:not(:first-child) {
+    padding-left: 4px;
+    border-left: 1px solid #666;
+}
