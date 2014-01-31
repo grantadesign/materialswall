@@ -31,10 +31,16 @@ hr {
     text-decoration: none;
 }
 
+.jumbotron .about {
+    float: right;
+    font-size: medium;
+    margin-top: -25px;
+    margin-right: -20px;
+}
+
 .footer {
     font-size: small;
     color: #999;
-    padding-top: 30px;
     padding-bottom: 10px;
     text-align: right;
 }
