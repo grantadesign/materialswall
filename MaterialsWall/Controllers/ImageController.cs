@@ -10,6 +10,7 @@ namespace Granta.MaterialsWall.Controllers
     public sealed class ImageController : Controller
     {
         private const int ThumbnailWidth = 240;
+        private const int FullSizeWidth = 800;
 
         private readonly ICardRepository cardRepository;
         private readonly IImagePathFormatter imagePathFormatter;
@@ -46,18 +47,22 @@ namespace Granta.MaterialsWall.Controllers
 
         public ActionResult Index(Guid identifier)
         {
-            var image = GetImage(identifier);
-            return GetImageStream(image);
+            return GetSizedImage(identifier, FullSizeWidth);
         }
 
         public ActionResult Thumbnail(Guid identifier)
         {
+            return GetSizedImage(identifier, ThumbnailWidth);
+        }
+
+        private ActionResult GetSizedImage(Guid identifier, int maxWidth)
+        {
             var image = GetImage(identifier);
             var originalSize = image.Size;
 
-            if (originalSize.Width > ThumbnailWidth)
+            if (originalSize.Width > maxWidth)
             {
-                double scale = ((double) ThumbnailWidth) / originalSize.Width;
+                double scale = ((double) maxWidth) / originalSize.Width;
                 image = thumbnailGenerator.Scale(image, scale);
             }
 

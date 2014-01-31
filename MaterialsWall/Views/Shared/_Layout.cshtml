@@ -15,9 +15,20 @@
 
     <body>
         <div class="jumbotron">
+            @if (!IsSectionDefined("aboutlink"))
+            {
+                <div class="about">
+                    <a href="@Url.Action("About", "Home")" title="About this site..."><span class="glyphicon glyphicon-question-sign"></span></a>
+                </div>
+            }
+
+            @RenderSection("aboutlink", required : false)
+
             <div class="container">
-                <a href="@Url.Action("Index", "Home")">
-                    <img src="~/Content/logo.png" title="Granta Material Collection"/>
+                <a href="@Url.Action("Index", "Home")" title="Granta Materials Collection">
+                    <img src="~/Content/logo.png"/>
+                    <br/>
+                    Materials Collection
                 </a>
             </div>
         </div>
@@ -29,15 +40,6 @@
         <div class="container">
             <div class="footer">
                 <hr/>
-                @if (!IsSectionDefined("aboutfooter"))
-                {
-                    <div class="about">
-                        <a href="@Url.Action("About", "Home")"><img src="~/Content/aboutlink.png" title="Find out more"/></a>
-                    </div>
-                }
-
-                @RenderSection("aboutfooter", required : false)
-                
                 <nobr>
                     &copy; <a href="http://www.grantadesign.com">Granta Design</a> @(DateTime.Now.Year)
                 </nobr>
