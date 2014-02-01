@@ -71,9 +71,6 @@
     text-transform: capitalize;
 }
 
-.materialscount {
-    margin-top: 10px;
-    font-size: small;
-    color: #666;
-    text-align: right;
+#loading {
+    text-align: center;
 }
