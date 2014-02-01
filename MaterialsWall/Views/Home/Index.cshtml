@@ -5,24 +5,38 @@
     @Styles.Render("~/bundles/wallcards")
 }
 
-<div class="row">
-    @foreach(var card in Model)
-    {
-        <div class="cardholder col-xs-12 col-sm-6 col-md-4 col-lg-3">
-            <a href="@Url.Action("Index", "Card", new { identifier = card.Identifier })">
-                <div class="wallcard">
-                    <img src="@Url.Action("Thumbnail", "Image", new { identifier = card.Identifier })" title="@card.Name"/>
+<div id="cardcontainer">
+    <div class="row">
+        @foreach(var card in Model)
+        {
+            <div class="cardholder col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <a href="@Url.Action("Index", "Card", new { identifier = card.Identifier })">
+                    <div class="wallcard">
+                        <img src="@Url.Action("Thumbnail", "Image", new { identifier = card.Identifier })" title="@card.Name"/>
                     
-                    <div class="details">
-                        <div class="materialname">@card.Name</div>
-                        <div class="materialpath">@card.Path</div>
-                    </div>
-                </div></a>
-        </div>
-    }
+                        <div class="details">
+                            <div class="materialname">@card.Name</div>
+                            <div class="materialpath">@card.Path</div>
+                        </div>
+                    </div></a>
+            </div>
+        }
+    </div>
 </div>
 
 @section scripts
 {
     @Scripts.Render("~/bundles/searchfilter")
+    <script src="~/Scripts/jquery.infinite-scroll-helper.min.js"></script>
+    <script>
+        $('#cardcontainer').infiniteScrollHelper({
+            loadMore: function (page, done) {
+                var nextPageUrl = '@Url.Action("Index", "Home")?p=' + page;
+
+                $.get(nextPageUrl, function (data) {
+                    $(data).find('.row').appendTo('#cardcontainer');
+                    done();
+                });
+            }});
+    </script>
 }

@@ -298,6 +298,7 @@
     <Compile Include="Images\ImageToRawDataConverter.cs" />
     <Compile Include="Images\QRCodeGenerator.cs" />
     <Content Include="Content\logo.png" />
+    <Content Include="Scripts\jquery.infinite-scroll-helper.min.js" />
     <Content Include="Scripts\searchfilter.js" />
     <Content Include="Content\card.css" />
     <Content Include="Content\materialswall.css" />
@@ -313,6 +314,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Images\ThumbnailGenerator.cs" />
+    <Compile Include="Paginator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
