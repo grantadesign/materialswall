@@ -24,6 +24,10 @@
     </div>
 </div>
 
+<div id="loading">
+    <img src="~/Content/loading.gif" />
+</div>
+
 @section scripts
 {
     @Scripts.Render("~/bundles/searchfilter")
@@ -33,8 +37,11 @@
             loadMore: function (page, done) {
                 var nextPageUrl = '@Url.Action("Index", "Home")?p=' + page;
 
+                $("#loading").show();
+
                 $.get(nextPageUrl, function (data) {
                     $(data).find('.row').appendTo('#cardcontainer');
+                    $("#loading").hide();
                     done();
                 });
             }});

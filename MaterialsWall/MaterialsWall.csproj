@@ -292,6 +292,7 @@
     <Content Include="App_Data\MaterialImages\unknown.png" />
     <Content Include="Content\about.css" />
     <Content Include="Content\aboutlink.png" />
+    <Content Include="Content\loading.gif" />
     <Content Include="Content\materialswall.jpg" />
     <Content Include="Content\walllabel.css" />
     <Compile Include="Images\ImagePathFormatter.cs" />

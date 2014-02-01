@@ -70,3 +70,7 @@
     text-wrap: normal;
     text-transform: capitalize;
 }
+
+#loading {
+    text-align: center;
+}
