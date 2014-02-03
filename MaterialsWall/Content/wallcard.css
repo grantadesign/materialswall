@@ -74,3 +74,8 @@
 #loading {
     text-align: center;
 }
+
+[id*="pagemarker"] {
+    color: white;
+    line-height: 0;
+}

@@ -7,7 +7,7 @@
 
 <div id="cardcontainer">
     <div id="cardrow" class="row">
-        @Html.Partial("_PageOfCards", Model);
+        @Html.Partial("_PageOfCards", Model)
     </div>
 </div>
 
@@ -17,24 +17,9 @@
 
 @section scripts
 {
-    @Scripts.Render("~/bundles/searchfilter")
-    <script src="~/Scripts/jquery.infinite-scroll-helper.min.js"></script>
     <script>
-        $('#cardcontainer').infiniteScrollHelper({
-            loadMore: function (page, done) {
-                var nextPageUrl = '@Url.Action("Page", "Home")?p=' + page;
-
-                $("#loading").show();
-
-                $.ajax({
-                    url: nextPageUrl,
-                    success: function(data) {
-                        $("#loading").hide();
-                        $(data).appendTo('#cardrow');
-                        done();
-                    }
-                });
-            }
-        });
+        var nextPageStub = '@Url.Action("Page", "Home")?p=';
     </script>
+    @Scripts.Render("~/bundles/searchfilter")
+    @Scripts.Render("~/bundles/scroll-loading")
 }

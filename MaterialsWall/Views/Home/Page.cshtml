@@ -1,6 +1,7 @@
-﻿@model IEnumerable<Granta.MaterialsWall.DataAccess.Card>
+﻿@model Granta.MaterialsWall.Models.PageOfCardsModel
 @{
     Layout = "";
 }
 
-@Html.Partial("_PageOfCards", Model)
+<div id="pagemarker@(Model.PageNumber)" class="col-12">.</div>
+@Html.Partial("_PageOfCards", Model.Cards)

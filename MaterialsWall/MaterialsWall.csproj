@@ -149,6 +149,7 @@
     <Compile Include="App_Start\Ninject\DependencyResolverAdapter .cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Scripts\scroll-loading.js" />
     <Content Include="App_Data\data.txt" />
     <Content Include="App_Data\MaterialImages\mat1.jpg" />
     <Content Include="App_Data\MaterialImages\mat10.jpg" />
@@ -315,6 +316,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Images\ThumbnailGenerator.cs" />
+    <Compile Include="Models\PageOfCardsModel.cs" />
     <Compile Include="Paginator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

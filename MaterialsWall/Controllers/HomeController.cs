@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using Granta.MaterialsWall.DataAccess;
+using Granta.MaterialsWall.Models;
 
 namespace Granta.MaterialsWall.Controllers
 {
@@ -38,7 +39,8 @@ namespace Granta.MaterialsWall.Controllers
         public ActionResult Page(int p = 1)
         {
             var cards = GetCardsOnPage(p);
-            return View(cards);
+            var model = new PageOfCardsModel {PageNumber = p, Cards = cards};
+            return View(model);
         }
 
         private IEnumerable<Card> GetCardsOnPage(int pageNumber)

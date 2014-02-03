@@ -29,6 +29,10 @@ namespace Granta.MaterialsWall
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/scroll-loading").Include(
+                        "~/Scripts/scroll-loading.js",
+                        "~/Scripts/jquery.infinite-scroll-helper.min.js"));
+
             BundleTable.EnableOptimizations = true;
         }
     }
