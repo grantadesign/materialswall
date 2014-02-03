@@ -26,11 +26,15 @@
 
                 $("#loading").show();
 
-                $.get(nextPageUrl, function (data) {
-                    $("#loading").hide();
-                    $(data).appendTo('#cardrow');
-                    done();
+                $.ajax({
+                    url: nextPageUrl,
+                    success: function(data) {
+                        $("#loading").hide();
+                        $(data).appendTo('#cardrow');
+                        done();
+                    }
                 });
-            }});
+            }
+        });
     </script>
 }
