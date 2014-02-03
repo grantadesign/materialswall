@@ -6,25 +6,12 @@
 }
 
 <div id="cardcontainer">
-    <div class="row">
-        @foreach(var card in Model)
-        {
-            <div class="cardholder col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                <a href="@Url.Action("Index", "Card", new { identifier = card.Identifier })">
-                    <div class="wallcard">
-                        <img src="@Url.Action("Thumbnail", "Image", new { identifier = card.Identifier })" title="@card.Name"/>
-                    
-                        <div class="details">
-                            <div class="materialname">@card.Name</div>
-                            <div class="materialpath">@card.Path</div>
-                        </div>
-                    </div></a>
-            </div>
-        }
+    <div id="cardrow" class="row">
+        @Html.Partial("_PageOfCards", Model);
     </div>
 </div>
 
-<div id="loading">
+<div id="loading" style="display:none">
     <img src="~/Content/loading.gif" />
 </div>
 
@@ -35,13 +22,13 @@
     <script>
         $('#cardcontainer').infiniteScrollHelper({
             loadMore: function (page, done) {
-                var nextPageUrl = '@Url.Action("Index", "Home")?p=' + page;
+                var nextPageUrl = '@Url.Action("Page", "Home")?p=' + page;
 
                 $("#loading").show();
 
                 $.get(nextPageUrl, function (data) {
-                    $(data).find('.row').appendTo('#cardcontainer');
                     $("#loading").hide();
+                    $(data).appendTo('#cardrow');
                     done();
                 });
             }});

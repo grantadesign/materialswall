@@ -348,6 +348,9 @@
     <Content Include="Views\Card\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Labels\Index.cshtml" />
+    <Content Include="Views\Home\Page.cshtml" />
+    <Content Include="Views\Home\_WallCard.cshtml" />
+    <Content Include="Views\Home\_PageOfCards.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
