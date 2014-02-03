@@ -33,9 +33,15 @@ hr {
 
 .jumbotron .about {
     float: right;
-    font-size: medium;
+    font-size: small;
     margin-top: -25px;
     margin-right: -20px;
+}
+
+@media(min-width:768px) {
+    .jumbotron .about a:after {
+        content: " About";
+    }
 }
 
 .footer {
