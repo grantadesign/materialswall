@@ -1,0 +1,13 @@
+﻿@model Granta.MaterialsWall.DataAccess.Card
+
+<div class="cardholder col-xs-12 col-sm-6 col-md-4 col-lg-3">
+    <a href="@Url.Action("Index", "Card", new { identifier = @Model.Identifier })">
+        <div class="wallcard">
+            <img src="@Url.Action("Thumbnail", "Image", new { identifier = @Model.Identifier })" title="@Model.Name"/>
+                    
+            <div class="details">
+                <div class="materialname">@Model.Name</div>
+                <div class="materialpath">@Model.Path</div>
+            </div>
+        </div></a>
+</div>
