@@ -1,7 +1,8 @@
 [Bb]in/
 [Oo]bj/
 packages/
-
+_ReSharper.*
+_NCrunch_*
 *.user
 *.suo
 *.ncrunchsolution
