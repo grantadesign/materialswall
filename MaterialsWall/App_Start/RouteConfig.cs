@@ -12,7 +12,13 @@ namespace Granta.MaterialsWall
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{identifier}",
-                defaults: new { controller = "Home", action = "Index", identifier = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", identifier = UrlParameter.Optional },
+                constraints: new { controller = "(?!qr).*" }
+            );
+            routes.MapRoute(
+                name: "QRCodes",
+                url: "QR/{identifier}",
+                defaults: new { controller = "Card", action = "Index", identifier = UrlParameter.Optional }
             );
         }
     }

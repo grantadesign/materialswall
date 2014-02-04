@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Net.Mime;
+using System.Web;
 using System.Web.Mvc;
 using Granta.MaterialsWall.DataAccess;
 using Granta.MaterialsWall.Images;
@@ -45,7 +46,8 @@ namespace Granta.MaterialsWall.Controllers
 
         public FileResult Image(Guid identifier)
         {
-            var qrCode = codeGenerator.Generate(identifier, QRCodeSize);
+            var baseUrl = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"));
+            var qrCode = codeGenerator.Generate(baseUrl, identifier, QRCodeSize);
             return GetImageStream(qrCode);
         }
 
