@@ -3,5 +3,8 @@
     Layout = "";
 }
 
-<div id="pagemarker@(Model.PageNumber)" class="col-12">.</div>
-@Html.Partial("_PageOfCards", Model.Cards)
+@if (Model.Cards.Any())
+{
+    <div id="pagemarker@(Model.PageNumber)" class="col-12">.</div>
+    @Html.Partial("_PageOfCards", Model.Cards)
+}
