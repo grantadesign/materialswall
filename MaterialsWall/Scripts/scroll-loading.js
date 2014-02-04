@@ -1,4 +1,5 @@
 ﻿var fetchUpToPage = 1;
+var morePagesAvailable = true;
 
 $(document).ready(function () {
     if (window.location.hash) {
@@ -40,21 +41,44 @@ function initialiseScrollLoader() {
     $('#cardcontainer').infiniteScrollHelper({
         startingPageCount: fetchUpToPage,
         loadMore: function (pageNumber, done) {
+            if (!morePagesAvailable) {
+                done();
+                return;
+            }
+            
             var nextPageUrl = nextPageStub + pageNumber;
-
             $("#loading").show();
 
             $.ajax({
                 url: nextPageUrl,
-                success: function (data) {
+                success: function(data) {
+                    data = trimWhitespace(data);
                     $('#loading').hide();
-                    $(data).appendTo('#cardrow');
-                    done();
 
-                    window.location.hash = pageNumber;
-                    window.location = window.location;
+                    if (data.length == 0) {
+                        morePagesAvailable = false;
+                    } else {
+                        $(data).appendTo('#cardrow');
+                        window.location.hash = pageNumber;
+                        window.location = window.location;
+                    }
+
+                    done();
                 }
             });
         }
     });
+}
+
+function trimWhitespace(str) {
+    str = str.replace(/^\s+/, '');
+
+    for (var i = str.length - 1; i >= 0; i--) {
+        if (/\S/.test(str.charAt(i))) {
+            str = str.substring(0, i + 1);
+            break;
+        }
+    }
+
+    return str;
 }
