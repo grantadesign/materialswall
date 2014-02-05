@@ -1,6 +1,7 @@
 [Bb]in/
 [Oo]bj/
 packages/
+logs/
 _ReSharper.*
 _NCrunch_*
 *.user

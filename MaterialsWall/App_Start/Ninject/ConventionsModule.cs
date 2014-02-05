@@ -12,7 +12,6 @@ namespace Granta.MaterialsWall.Ninject
             Kernel.Bind(scanner => scanner.FromAssembliesMatching("Granta.MaterialsWall*.dll")
                                                .SelectAllClasses()
                                                .Excluding<CardRepository>()
-                                               .Excluding<DataFileWatcher>()
                                                .BindDefaultInterface()
                                                .Configure(binding => binding.InRequestScope()));
         }

@@ -58,11 +58,19 @@
     <Reference Include="Ninject.Extensions.Conventions">
       <HintPath>..\packages\Ninject.Extensions.Conventions.3.0.0.11\lib\net40\Ninject.Extensions.Conventions.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject.Extensions.Logging, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.Extensions.Logging.3.0.1.0\lib\net40\Ninject.Extensions.Logging.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject.Web.Common">
       <HintPath>..\packages\Ninject.Web.Common.3.0.0.7\lib\net40-full\Ninject.Web.Common.dll</HintPath>
     </Reference>
     <Reference Include="Ninject.Web.Mvc">
       <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net40-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.1.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.2.1.0\lib\net40\NLog.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -153,8 +161,8 @@
     <Compile Include="App_Start\Ninject\ConventionsModule.cs" />
     <Compile Include="App_Start\Ninject\DataLoadingModule.cs" />
     <Compile Include="App_Start\Ninject\DependencyResolverAdapter.cs" />
+    <Compile Include="App_Start\Ninject\LoggingModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Scripts\scroll-loading.js" />
     <Content Include="App_Data\MaterialImages\mat1.jpg" />
     <Content Include="App_Data\MaterialImages\mat10.jpg" />
@@ -303,12 +311,14 @@
     <Content Include="Content\walllabel.css" />
     <Compile Include="DataAccess\CardFactory.cs" />
     <Compile Include="DataAccess\CardsLoader.cs" />
+    <Compile Include="DataAccess\DataFilePathProvider.cs" />
     <Compile Include="DataAccess\Excel\Column.cs" />
     <Compile Include="DataAccess\Excel\ColumnNames.cs" />
     <Compile Include="DataAccess\Excel\ColumnParser.cs" />
     <Compile Include="DataAccess\Excel\ExcelImporter.cs" />
     <Compile Include="DataAccess\Excel\RowParser.cs" />
     <Compile Include="DataAccess\FileSystemWatcherFactory.cs" />
+    <Compile Include="Logging\NLogToNinjectLogConverter.cs" />
     <Compile Include="Models\Link.cs" />
     <Compile Include="Images\ImagePathFormatter.cs" />
     <Compile Include="Images\ImageToRawDataConverter.cs" />
@@ -338,6 +348,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="App_Data\data.xlsx" />
+    <Content Include="NLog.config" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />

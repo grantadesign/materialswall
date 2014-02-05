@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Web.Http;
+using Granta.MaterialsWall.Ninject;
 using Ninject;
 using Ninject.Web.Common;
+using Ninject.Web.Mvc;
 
 namespace Granta.MaterialsWall
 {
@@ -8,10 +11,12 @@ namespace Granta.MaterialsWall
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
-        public static IKernel Start() 
+        public static IKernel Start(HttpConfiguration configuration) 
         {
             bootstrapper.Initialize(CreateKernel);
-            return bootstrapper.Kernel;
+            IKernel kernel = bootstrapper.Kernel;
+            configuration.DependencyResolver = new DependencyResolverAdapter(new NinjectDependencyResolver(kernel));
+            return kernel;
         }
 
         public static void Stop()
