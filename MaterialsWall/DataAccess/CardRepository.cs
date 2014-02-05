@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using Granta.MaterialsWall.Models;
 
 namespace Granta.MaterialsWall.DataAccess
 {
@@ -10,26 +10,56 @@ namespace Granta.MaterialsWall.DataAccess
         Card GetCard(Guid identifier);
     }
 
-    public class CardRepository : ICardRepository
+    public sealed class CardRepository : ICardRepository
     {
-        private readonly Dictionary<Guid, Card> cards;
+        private readonly ICardsLoader cardsLoader;
+        private readonly IDataFileWatcher dataFileWatcher;
 
-        public CardRepository()
+        private IDictionary<Guid, Card> cards;
+
+        public CardRepository(ICardsLoader cardsLoader, IDataFileWatcher dataFileWatcher)
         {
-            IEnumerable<Card> allCards = DataFileWatcher.Cards;
-            cards = allCards.ToDictionary(c => c.Identifier, c => c);
+            if (cardsLoader == null)
+            {
+                throw new ArgumentNullException("cardsLoader");
+            }
+            
+            if (dataFileWatcher == null)
+            {
+                throw new ArgumentNullException("dataFileWatcher");
+            }
+
+            this.cardsLoader = cardsLoader;
+            this.dataFileWatcher = dataFileWatcher;
         }
 
         public IEnumerable<Card> GetCards()
         {
+            ReloadCardsIfNecessary();
             return cards.Values;
         }
 
         public Card GetCard(Guid identifier)
         {
+            ReloadCardsIfNecessary();
             Card card;
             cards.TryGetValue(identifier, out card);
             return card;
         }
+
+        private void ReloadCardsIfNecessary()
+        {
+            if (dataFileWatcher.DataFileHasChanged)
+            {
+                var newCards = cardsLoader.LoadCards();
+
+                lock (syncroot)
+                {
+                    cards = newCards;
+                }
+            }
+        }
+
+        private readonly object syncroot = new object();
     }
 }

@@ -1,4 +1,4 @@
-﻿@model Granta.MaterialsWall.DataAccess.Card
+﻿@model Granta.MaterialsWall.Models.Card
 
 @{
     ViewBag.title = Model.Name;
@@ -78,7 +78,7 @@
                     <ul>
                         @foreach (var link in @Model.Links)
                         {
-                            <li><a href="@link">@link</a></li>
+                            <li><a href="@link.Url">@link.Text</a></li>
                         }
                     </ul>
                 </div>

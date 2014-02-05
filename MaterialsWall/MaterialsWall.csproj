@@ -43,6 +43,10 @@
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus, Version=3.1.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EPPlus.3.1.3.3\lib\net35\EPPlus.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -142,15 +146,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppSettingsProvider.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectConfig.cs" />
     <Compile Include="App_Start\Ninject\ConventionsModule.cs" />
+    <Compile Include="App_Start\Ninject\DataLoadingModule.cs" />
     <Compile Include="App_Start\Ninject\DependencyResolverAdapter.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Scripts\scroll-loading.js" />
-    <Content Include="App_Data\data.txt" />
     <Content Include="App_Data\MaterialImages\mat1.jpg" />
     <Content Include="App_Data\MaterialImages\mat10.jpg" />
     <Content Include="App_Data\MaterialImages\mat101.jpg" />
@@ -296,6 +301,15 @@
     <Content Include="Content\loading.gif" />
     <Content Include="Content\materialswall.jpg" />
     <Content Include="Content\walllabel.css" />
+    <Compile Include="DataAccess\CardFactory.cs" />
+    <Compile Include="DataAccess\CardsLoader.cs" />
+    <Compile Include="DataAccess\Excel\Column.cs" />
+    <Compile Include="DataAccess\Excel\ColumnNames.cs" />
+    <Compile Include="DataAccess\Excel\ColumnParser.cs" />
+    <Compile Include="DataAccess\Excel\ExcelImporter.cs" />
+    <Compile Include="DataAccess\Excel\RowParser.cs" />
+    <Compile Include="DataAccess\FileSystemWatcherFactory.cs" />
+    <Compile Include="Models\Link.cs" />
     <Compile Include="Images\ImagePathFormatter.cs" />
     <Compile Include="Images\ImageToRawDataConverter.cs" />
     <Compile Include="Images\QRCodeGenerator.cs" />
@@ -309,7 +323,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\LabelsController.cs" />
-    <Compile Include="DataAccess\Card.cs" />
+    <Compile Include="Models\Card.cs" />
     <Compile Include="DataAccess\CardRepository.cs" />
     <Compile Include="DataAccess\DataFileWatcher.cs" />
     <Compile Include="Global.asax.cs">
@@ -323,6 +337,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="App_Data\data.xlsx" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
