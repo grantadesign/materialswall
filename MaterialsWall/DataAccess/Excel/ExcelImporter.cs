@@ -1,13 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Granta.MaterialsWall.Models;
 using OfficeOpenXml;
 
 namespace Granta.MaterialsWall.DataAccess.Excel
 {
-    public sealed class ExcelImporter
+    public interface IExcelImporter
     {
+        IEnumerable<Card> ParseData(string filename);
+    }
+
+    public sealed class ExcelImporter : IExcelImporter
+    {
+        private readonly IColumnParser columnParser;
+        private readonly IRowParser rowParser;
+
+        public ExcelImporter(IColumnParser columnParser, IRowParser rowParser)
+        {
+            if (columnParser == null)
+            {
+                throw new ArgumentNullException("columnParser");
+            }
+
+            if (rowParser == null)
+            {
+                throw new ArgumentNullException("rowParser");
+            }
+            
+            this.columnParser = columnParser;
+            this.rowParser = rowParser;
+        }
+
         public IEnumerable<Card> ParseData(string filename)
         {
             var excelPackage = new ExcelPackage(new FileInfo(filename));
@@ -20,25 +45,17 @@ namespace Granta.MaterialsWall.DataAccess.Excel
             }
 
             var worksheet = workbook.Worksheets[1];
-
-            var columnParser = new ColumnParser();
-            var columns = columnParser.ParseColumns(worksheet);
-
-            var rowParser = new RowParser(columns);
+            var columns = columnParser.ParseColumns(worksheet).ToList();
             var cards = new List<Card>();
 
             // skip the header row
             for (int rowIndex = 2; rowIndex <= worksheet.Dimension.End.Row; rowIndex++)
             {
-                var card = rowParser.ParseRow(worksheet, rowIndex);
-
-                if (card != null)
-                {
-                    cards.Add(card);
-                }
+                var card = rowParser.ParseRow(columns, worksheet, rowIndex);
+                cards.Add(card);
             }
 
-            return cards;
+            return cards.Where(c => c != null);
         }
     }
 }

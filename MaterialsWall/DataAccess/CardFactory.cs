@@ -3,7 +3,12 @@ using Granta.MaterialsWall.Models;
 
 namespace Granta.MaterialsWall.DataAccess
 {
-    public sealed class CardFactory
+    public interface ICardFactory
+    {
+        Card Create(string identifier, string name, string id, string description, string typicalUses, string source, string sample, string path, Link[] links);
+    }
+
+    public sealed class CardFactory : ICardFactory
     {
         public Card Create(string identifier, string name, string id, string description, string typicalUses, string source, string sample, string path, Link[] links)
         {

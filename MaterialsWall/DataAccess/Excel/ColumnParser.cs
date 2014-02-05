@@ -3,17 +3,22 @@ using OfficeOpenXml;
 
 namespace Granta.MaterialsWall.DataAccess.Excel
 {
-    public sealed class ColumnParser
+    public interface IColumnParser
     {
-        public IDictionary<string, Column> ParseColumns(ExcelWorksheet worksheet)
+        IEnumerable<Column> ParseColumns(ExcelWorksheet worksheet);
+    }
+
+    public sealed class ColumnParser : IColumnParser
+    {
+        public IEnumerable<Column> ParseColumns(ExcelWorksheet worksheet)
         {
-            var columns = new Dictionary<string, Column>();
+            var columns = new List<Column>();
 
             for (int columnIndex = 1; columnIndex <= worksheet.Dimension.End.Column; columnIndex++)
             {
                 string columnName = worksheet.Cells[1, columnIndex].GetValue<string>() ?? string.Empty;
                 var column = new Column(columnName, columnIndex);
-                columns.Add(columnName, column);
+                columns.Add(column);
             }
 
             return columns;

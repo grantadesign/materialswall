@@ -6,36 +6,70 @@ using OfficeOpenXml;
 
 namespace Granta.MaterialsWall.DataAccess.Excel
 {
-    public sealed class RowParser
+    public interface IRowParser
     {
-        private readonly IDictionary<string, Column> columns;
+        Card ParseRow(IEnumerable<Column> columns, ExcelWorksheet worksheet, int rowIndex);
+    }
 
-        public RowParser(IDictionary<string, Column> columns)
+    public sealed class RowParser : IRowParser
+    {
+        private readonly ICardFactory cardFactory;
+        private readonly IColumnNames columnNames;
+
+        public RowParser(ICardFactory cardFactory, IColumnNames columnNames)
         {
-            this.columns = columns;
+            if (cardFactory == null)
+            {
+                throw new ArgumentNullException("cardFactory");
+            }
+
+            if (columnNames == null)
+            {
+                throw new ArgumentNullException("columnNames");
+            }
+            
+            this.cardFactory = cardFactory;
+            this.columnNames = columnNames;
         }
 
-        public Card ParseRow(ExcelWorksheet worksheet, int rowIndex)
+        public Card ParseRow(IEnumerable<Column> columns, ExcelWorksheet worksheet, int rowIndex)
         {
-            var columnNames = new ColumnNames();
-            var visible = GetColumnValue(worksheet, rowIndex, columnNames.Visible);
+            var columnsMap = columns.ToDictionary(c => c.Name, c => c);
+            
+            var visibleColumn = GetColumn(columnsMap, columnNames.Visible);
+            var visible = GetColumnValue(visibleColumn, worksheet, rowIndex);
 
             if (CardIsHidden(visible))
             {
                 return null;
             }
 
-            var identifier = GetColumnValue(worksheet, rowIndex, columnNames.Identifier);
-            var name = GetColumnValue(worksheet, rowIndex, columnNames.Name);
-            var id = GetColumnValue(worksheet, rowIndex, columnNames.Id);
-            var description = GetColumnValue(worksheet, rowIndex, columnNames.Description);
-            var typicalUses = GetColumnValue(worksheet, rowIndex, columnNames.TypicalUses);
-            var sample = GetColumnValue(worksheet, rowIndex, columnNames.Sample);
-            var source = GetColumnValue(worksheet, rowIndex, columnNames.Source);
-            var path = GetColumnValue(worksheet, rowIndex, columnNames.Path);
-            var links = GetLinks(columnNames, worksheet, rowIndex);
+            var identifierColumn = GetColumn(columnsMap, columnNames.Identifier);
+            var identifier = GetColumnValue(identifierColumn, worksheet, rowIndex);
+            
+            var nameColumn = GetColumn(columnsMap, columnNames.Name);
+            var name = GetColumnValue(nameColumn, worksheet, rowIndex);
+            
+            var idColumn = GetColumn(columnsMap, columnNames.Id);
+            var id = GetColumnValue(idColumn, worksheet, rowIndex);
+            
+            var descriptionColumn = GetColumn(columnsMap, columnNames.Description);
+            var description = GetColumnValue(descriptionColumn, worksheet, rowIndex);
+            
+            var typicalUsesColumn = GetColumn(columnsMap, columnNames.TypicalUses);
+            var typicalUses = GetColumnValue(typicalUsesColumn, worksheet, rowIndex);
+            
+            var sampleColumn = GetColumn(columnsMap, columnNames.Sample);
+            var sample = GetColumnValue(sampleColumn, worksheet, rowIndex);
+            
+            var sourceColumn = GetColumn(columnsMap, columnNames.Source);
+            var source = GetColumnValue(sourceColumn, worksheet, rowIndex);
+            
+            var pathColumn = GetColumn(columnsMap, columnNames.Path);
+            var path = GetColumnValue(pathColumn, worksheet, rowIndex);
+            
+            var links = GetLinks(columnsMap, worksheet, rowIndex);
 
-            var cardFactory = new CardFactory();
             return cardFactory.Create(identifier, name, id, description, typicalUses, source, sample, path, links);
         }
 
@@ -44,10 +78,16 @@ namespace Granta.MaterialsWall.DataAccess.Excel
             return !string.Equals(visible, "yes", StringComparison.InvariantCultureIgnoreCase);
         }
 
-        private string GetColumnValue(ExcelWorksheet worksheet, int rowIndex, string columnName)
+        private Column GetColumn(IDictionary<string, Column> columnsMap, string columnName)
         {
             Column column;
-            return columns.TryGetValue(columnName, out column) ? ExtractCellValue(worksheet, rowIndex, column.Index) : null;
+            columnsMap.TryGetValue(columnName, out column);
+            return column;
+        }
+
+        private string GetColumnValue(Column column, ExcelWorksheet worksheet, int rowIndex)
+        {
+            return column != null ? ExtractCellValue(worksheet, rowIndex, column.Index) : null;
         }
 
         private string ExtractCellValue(ExcelWorksheet worksheet, int rowIndex, int columnIndex)
@@ -56,22 +96,22 @@ namespace Granta.MaterialsWall.DataAccess.Excel
             return string.IsNullOrWhiteSpace(value) ? null : value;
         }
 
-        private Link[] GetLinks(ColumnNames columnNames, ExcelWorksheet worksheet, int rowIndex)
+        private Link[] GetLinks(IDictionary<string, Column> columnsMap, ExcelWorksheet worksheet, int rowIndex)
         {
             Link[] links =
             {
-                GetLink(worksheet, rowIndex, columnNames.Link1Url, columnNames.Link1Name),
-                GetLink(worksheet, rowIndex, columnNames.Link2Url, columnNames.Link2Name),
-                GetLink(worksheet, rowIndex, columnNames.Link3Url, columnNames.Link3Name)
+                GetLink(worksheet, rowIndex, GetColumn(columnsMap, columnNames.Link1Url), GetColumn(columnsMap, columnNames.Link1Name)),
+                GetLink(worksheet, rowIndex, GetColumn(columnsMap, columnNames.Link2Url), GetColumn(columnsMap, columnNames.Link2Name)),
+                GetLink(worksheet, rowIndex, GetColumn(columnsMap, columnNames.Link3Url), GetColumn(columnsMap, columnNames.Link3Name))
             };
 
             return links.Where(l => l != null).ToArray();
         }
 
-        private Link GetLink(ExcelWorksheet worksheet, int rowIndex, string urlColumnName, string textColumnName)
+        private Link GetLink(ExcelWorksheet worksheet, int rowIndex, Column urlColumn, Column textColumn)
         {
-            string url = GetColumnValue(worksheet, rowIndex, urlColumnName);
-            string text = GetColumnValue(worksheet, rowIndex, textColumnName);
+            string url = GetColumnValue(urlColumn, worksheet, rowIndex);
+            string text = GetColumnValue(textColumn, worksheet, rowIndex);
             return string.IsNullOrWhiteSpace(url) ? null : new Link(url, text);
         }
     }

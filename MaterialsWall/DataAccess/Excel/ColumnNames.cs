@@ -2,7 +2,26 @@
 
 namespace Granta.MaterialsWall.DataAccess.Excel
 {
-    public sealed class ColumnNames
+    public interface IColumnNames
+    {
+        string Visible{get;}
+        string Identifier{get;}
+        string Name{get;}
+        string Id{get;}
+        string Description{get;}
+        string TypicalUses{get;}
+        string Sample{get;}
+        string Source{get;}
+        string Path{get;}
+        string Link1Url{get;}
+        string Link1Name{get;}
+        string Link2Url{get;}
+        string Link2Name{get;}
+        string Link3Url{get;}
+        string Link3Name{get;}
+    }
+
+    public sealed class ColumnNames : IColumnNames
     {
         private const string SettingPrefix = "ExcelColumnName:";
 
