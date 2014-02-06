@@ -43,7 +43,7 @@ namespace Granta.MaterialsWall.DataAccess
         public IDictionary<Guid, Card> LoadCards()
         {
             string dataFilePath = dataFilePathProvider.GetPath();
-            logger.Debug("Loading cards from '{0}'", dataFilePath);
+            logger.Info("Loading cards from '{0}'", dataFilePath);
             var cards = excelImporter.ParseData(dataFilePath);
             return cards.ToDictionary(c => c.Identifier, c => c);
         }

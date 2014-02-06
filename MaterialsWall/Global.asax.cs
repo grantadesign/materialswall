@@ -21,7 +21,7 @@ namespace Granta.MaterialsWall
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
          
-            logger.Debug("Application started");
+            logger.Info("Application started");
         }
     }
 }
