@@ -318,6 +318,8 @@
     <Compile Include="DataAccess\Excel\ExcelImporter.cs" />
     <Compile Include="DataAccess\Excel\RowParser.cs" />
     <Compile Include="DataAccess\FileSystemWatcherFactory.cs" />
+    <Compile Include="Logging\LoggingFilterProvider.cs" />
+    <Compile Include="Logging\LogRequestFilter.cs" />
     <Compile Include="Logging\NLogToNinjectLogConverter.cs" />
     <Compile Include="Models\Link.cs" />
     <Compile Include="Images\ImagePathFormatter.cs" />
