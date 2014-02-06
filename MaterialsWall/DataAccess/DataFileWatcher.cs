@@ -1,25 +1,33 @@
 ﻿using System;
 using System.IO;
+using Ninject.Extensions.Logging;
 
 namespace Granta.MaterialsWall.DataAccess
 {
     public interface IDataFileWatcher
     {
-        bool DataFileHasChanged{get;}
+        bool FileHasChanged{get;}
+        void FileReloaded();
     }
 
     public sealed class DataFileWatcher : IDataFileWatcher
     {
+        private readonly ILogger logger;
         private readonly FileSystemWatcher fileSystemWatcher;
         
-        public bool DataFileHasChanged{get {return isDirty;}}
+        public bool FileHasChanged{get {return isDirty;}}
         private bool isDirty = true;
 
-        public DataFileWatcher(IAppSettingsProvider appSettingsProvider, IFileSystemWatcherFactory fileSystemWatcherFactory)
+        public DataFileWatcher(ILogger logger, IDataFilePathProvider dataFilePathProvider, IFileSystemWatcherFactory fileSystemWatcherFactory)
         {
-            if (appSettingsProvider == null)
+            if (logger == null)
             {
-                throw new ArgumentNullException("appSettingsProvider");
+                throw new ArgumentNullException("logger");
+            }
+            
+            if (dataFilePathProvider == null)
+            {
+                throw new ArgumentNullException("dataFilePathProvider");
             }
 
             if (fileSystemWatcherFactory == null)
@@ -27,9 +35,21 @@ namespace Granta.MaterialsWall.DataAccess
                 throw new ArgumentNullException("fileSystemWatcherFactory");
             }
             
-            string dataFilePath = appSettingsProvider.GetSetting("DataFile");
-            string dataFileFullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, dataFilePath);
-            fileSystemWatcher = fileSystemWatcherFactory.Create(dataFileFullPath, () => isDirty = true);
+            this.logger = logger;
+
+            string dataFilePath = dataFilePathProvider.GetPath();
+            fileSystemWatcher = fileSystemWatcherFactory.Create(dataFilePath, () => OnFileChanged(dataFilePath));
+        }
+
+        private void OnFileChanged(string dataFilePath)
+        {
+            logger.Debug("Data file ({0}) change event triggered", dataFilePath);
+            isDirty = true;
+        }
+
+        public void FileReloaded()
+        {
+            isDirty = false;
         }
     }
 }

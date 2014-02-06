@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using Granta.MaterialsWall.DataAccess.Excel;
 using Granta.MaterialsWall.Models;
+using Ninject.Extensions.Logging;
 
 namespace Granta.MaterialsWall.DataAccess
 {
@@ -14,32 +14,38 @@ namespace Granta.MaterialsWall.DataAccess
 
     public sealed class CardsLoader : ICardsLoader
     {
-        private readonly IAppSettingsProvider appSettingsProvider;
+        private readonly ILogger logger;
+        private readonly IDataFilePathProvider dataFilePathProvider;
         private readonly IExcelImporter excelImporter;
 
-        public CardsLoader(IAppSettingsProvider appSettingsProvider, IExcelImporter excelImporter)
+        public CardsLoader(ILogger logger, IDataFilePathProvider dataFilePathProvider, IExcelImporter excelImporter)
         {
-            if (appSettingsProvider == null)
+            if (logger == null)
             {
-                throw new ArgumentNullException("appSettingsProvider");
+                throw new ArgumentNullException("logger");
+            }
+            
+            if (dataFilePathProvider == null)
+            {
+                throw new ArgumentNullException("dataFilePathProvider");
             }
 
             if (excelImporter == null)
             {
                 throw new ArgumentNullException("excelImporter");
             }
-            
-            this.appSettingsProvider = appSettingsProvider;
+
+            this.logger = logger;
+            this.dataFilePathProvider = dataFilePathProvider;
             this.excelImporter = excelImporter;
         }
 
         public IDictionary<Guid, Card> LoadCards()
         {
-            string dataFilePath = appSettingsProvider.GetSetting("DataFile");
-            string dataFileFullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, dataFilePath);
-
-            var allCards = excelImporter.ParseData(dataFileFullPath);
-            return allCards.ToDictionary(c => c.Identifier, c => c);
+            string dataFilePath = dataFilePathProvider.GetPath();
+            logger.Info("Loading cards from '{0}'", dataFilePath);
+            var cards = excelImporter.ParseData(dataFilePath);
+            return cards.ToDictionary(c => c.Identifier, c => c);
         }
     }
 }

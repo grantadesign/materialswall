@@ -1,27 +1,27 @@
-﻿using System.Web.Http;
+﻿using System.Web;
+using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Granta.MaterialsWall.Ninject;
-using Ninject.Web.Mvc;
+using NLog;
 
 namespace Granta.MaterialsWall
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
         {
+            var logger = LogManager.GetLogger("default");
+            logger.Debug("Application starting...");
+
             AreaRegistration.RegisterAllAreas();
 
-            var kernel = NinjectConfig.Start();
-
-            HttpConfiguration configuration = GlobalConfiguration.Configuration;
-            configuration.DependencyResolver = new DependencyResolverAdapter(new NinjectDependencyResolver(kernel));
-            
-            WebApiConfig.Register(configuration);
+            NinjectConfig.Start(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+         
+            logger.Info("Application started");
         }
     }
 }

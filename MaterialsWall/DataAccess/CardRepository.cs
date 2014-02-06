@@ -49,13 +49,14 @@ namespace Granta.MaterialsWall.DataAccess
 
         private void ReloadCardsIfNecessary()
         {
-            if (dataFileWatcher.DataFileHasChanged)
+            if (dataFileWatcher.FileHasChanged)
             {
                 var newCards = cardsLoader.LoadCards();
 
                 lock (syncroot)
                 {
                     cards = newCards;
+                    dataFileWatcher.FileReloaded();
                 }
             }
         }

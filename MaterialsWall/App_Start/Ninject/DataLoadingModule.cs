@@ -8,7 +8,6 @@ namespace Granta.MaterialsWall.Ninject
         public override void Load()
         {
             Kernel.Bind<ICardRepository>().To<CardRepository>().InSingletonScope();
-            Kernel.Bind<IDataFileWatcher>().To<DataFileWatcher>().InSingletonScope();
         }
     }
 }

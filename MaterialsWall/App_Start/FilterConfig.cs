@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using Granta.MaterialsWall.Logging;
 
 namespace Granta.MaterialsWall
 {
@@ -6,6 +7,7 @@ namespace Granta.MaterialsWall
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
+            FilterProviders.Providers.Add(new LoggingFilterProvider());
             filters.Add(new HandleErrorAttribute());
         }
     }
