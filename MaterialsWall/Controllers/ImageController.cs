@@ -45,9 +45,9 @@ namespace Granta.MaterialsWall.Controllers
             this.thumbnailGenerator = thumbnailGenerator;
         }
 
-        public ActionResult Index(Guid identifier)
+        public ActionResult Index(Guid identifier, int index = 1)
         {
-            return GetSizedImage(identifier, FullSizeWidth);
+            return GetSizedImage(identifier, FullSizeWidth, index);
         }
 
         public ActionResult Thumbnail(Guid identifier)
@@ -55,9 +55,9 @@ namespace Granta.MaterialsWall.Controllers
             return GetSizedImage(identifier, ThumbnailWidth);
         }
 
-        private ActionResult GetSizedImage(Guid identifier, int maxWidth)
+        private ActionResult GetSizedImage(Guid identifier, int maxWidth, int imageIndex = 1)
         {
-            var image = GetImage(identifier);
+            var image = GetImage(identifier, imageIndex);
             var originalSize = image.Size;
 
             if (originalSize.Width > maxWidth)
@@ -69,10 +69,10 @@ namespace Granta.MaterialsWall.Controllers
             return GetImageStream(image);
         }
 
-        private Bitmap GetImage(Guid identifier)
+        private Bitmap GetImage(Guid identifier, int imageIndex)
         {
             var card = cardRepository.GetCard(identifier);
-            string imagePath = imagePathFormatter.GetImagePath(Server, card.Id);
+            string imagePath = imagePathFormatter.GetImagePath(Server, card.Id, imageIndex);
             var image = new Bitmap(imagePath);
             return image;
         }

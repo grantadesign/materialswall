@@ -68,9 +68,11 @@ namespace Granta.MaterialsWall.DataAccess.Excel
             var pathColumn = GetColumn(columnsMap, columnNames.Path);
             var path = GetColumnValue(pathColumn, worksheet, rowIndex);
             
+            var images = GetImages(columnsMap, worksheet, rowIndex);
+
             var links = GetLinks(columnsMap, worksheet, rowIndex);
 
-            return cardFactory.Create(identifier, name, id, description, typicalUses, source, sample, path, links);
+            return cardFactory.Create(identifier, name, id, description, typicalUses, source, sample, path, images, links);
         }
 
         private static bool CardIsHidden(string visible)
@@ -94,6 +96,35 @@ namespace Granta.MaterialsWall.DataAccess.Excel
         {
             string value = worksheet.Cells[rowIndex, columnIndex].GetValue<string>();
             return string.IsNullOrWhiteSpace(value) ? null : value;
+        }
+
+        private Image[] GetImages(IDictionary<string, Column> columnsMap, ExcelWorksheet worksheet, int rowIndex)
+        {
+            var images = new List<Image>();
+
+            if (DoesImageExist(columnNames.Image1, columnsMap, worksheet, rowIndex))
+            {
+                images.Add(new Image(1));
+            }
+
+            if (DoesImageExist(columnNames.Image2, columnsMap, worksheet, rowIndex))
+            {
+                images.Add(new Image(2));
+            }
+
+            if (DoesImageExist(columnNames.Image3, columnsMap, worksheet, rowIndex))
+            {
+                images.Add(new Image(3));
+            }
+
+            return images.ToArray();
+        }
+
+        private bool DoesImageExist(string columnName, IDictionary<string, Column> columnsMap, ExcelWorksheet worksheet, int rowIndex)
+        {
+            var column = GetColumn(columnsMap, columnName);
+            var columnValue = GetColumnValue(column, worksheet, rowIndex);
+            return string.Equals(columnValue, "yes", StringComparison.InvariantCultureIgnoreCase);
         }
 
         private Link[] GetLinks(IDictionary<string, Column> columnsMap, ExcelWorksheet worksheet, int rowIndex)

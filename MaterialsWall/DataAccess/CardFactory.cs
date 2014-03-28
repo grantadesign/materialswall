@@ -5,12 +5,12 @@ namespace Granta.MaterialsWall.DataAccess
 {
     public interface ICardFactory
     {
-        Card Create(string identifier, string name, string id, string description, string typicalUses, string source, string sample, string path, Link[] links);
+        Card Create(string identifier, string name, string id, string description, string typicalUses, string source, string sample, string path, Image[] images, Link[] links);
     }
 
     public sealed class CardFactory : ICardFactory
     {
-        public Card Create(string identifier, string name, string id, string description, string typicalUses, string source, string sample, string path, Link[] links)
+        public Card Create(string identifier, string name, string id, string description, string typicalUses, string source, string sample, string path, Image[] images, Link[] links)
         {
             Guid guid = Guid.Empty;
             bool identifierIsInvalid = string.IsNullOrWhiteSpace(identifier) || !Guid.TryParse(identifier, out guid);
@@ -21,7 +21,7 @@ namespace Granta.MaterialsWall.DataAccess
                 return null;
             }
 
-            return new Card(guid, name, id, description, typicalUses, source, sample, path, links);
+            return new Card(guid, name, id, description, typicalUses, source, sample, path, images, links);
         }
     }
 }

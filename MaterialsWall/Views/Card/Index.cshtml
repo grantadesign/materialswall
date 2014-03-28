@@ -12,7 +12,10 @@
 
 <div class="card">
     <div class="fotorama" data-width="800px" data-keyboard="true" data-loop="true" data-hash="true">
-        <img src="@Url.Action("Index", "Image", new { identifier = @Model.Identifier })" title="@Model.Name" />
+        @foreach (var image in Model.Images)
+        {
+            <img src="@Url.Action("Index", "Image", new { identifier = @Model.Identifier, index = image.Index })" title="@Model.Name" />
+        }
     </div>
     
     <div class="details">

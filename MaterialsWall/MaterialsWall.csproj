@@ -325,6 +325,7 @@
     <Compile Include="Logging\LoggingFilterProvider.cs" />
     <Compile Include="Logging\LogRequestFilter.cs" />
     <Compile Include="Logging\NLogToNinjectLogConverter.cs" />
+    <Compile Include="Models\Image.cs" />
     <Compile Include="Models\Link.cs" />
     <Compile Include="Images\ImagePathFormatter.cs" />
     <Compile Include="Images\ImageToRawDataConverter.cs" />
