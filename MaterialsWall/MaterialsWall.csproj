@@ -163,6 +163,10 @@
     <Compile Include="App_Start\Ninject\DependencyResolverAdapter.cs" />
     <Compile Include="App_Start\Ninject\LoggingModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="Content\fotorama%402x.png" />
+    <Content Include="Content\fotorama.css" />
+    <Content Include="Content\fotorama.png" />
+    <Content Include="Scripts\fotorama.js" />
     <Content Include="Scripts\scroll-loading.js" />
     <Content Include="App_Data\MaterialImages\mat1.jpg" />
     <Content Include="App_Data\MaterialImages\mat10.jpg" />
