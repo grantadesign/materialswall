@@ -13,9 +13,6 @@ namespace Granta.MaterialsWall.DataAccess.Excel
         string Sample{get;}
         string Source{get;}
         string Path{get;}
-        string Image1{get;}
-        string Image2{get;}
-        string Image3{get;}
         string Link1Url{get;}
         string Link1Name{get;}
         string Link2Url{get;}
@@ -37,9 +34,6 @@ namespace Granta.MaterialsWall.DataAccess.Excel
         public string Sample{get {return GetAppSetting(SettingPrefix + "Sample");}}
         public string Source{get {return GetAppSetting(SettingPrefix + "Source");}}
         public string Path{get {return GetAppSetting(SettingPrefix + "Path");}}
-        public string Image1{get {return GetAppSetting(SettingPrefix + "Image1");}}
-        public string Image2{get {return GetAppSetting(SettingPrefix + "Image2");}}
-        public string Image3{get {return GetAppSetting(SettingPrefix + "Image3");}}
         public string Link1Url{get {return GetAppSetting(SettingPrefix + "Link1Url");}}
         public string Link1Name{get {return GetAppSetting(SettingPrefix + "Link1Name");}}
         public string Link2Url{get {return GetAppSetting(SettingPrefix + "Link2Url");}}

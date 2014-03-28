@@ -45,7 +45,7 @@ namespace Granta.MaterialsWall.Controllers
             this.thumbnailGenerator = thumbnailGenerator;
         }
 
-        public ActionResult Index(Guid identifier, int index = 1)
+        public ActionResult Index(Guid identifier, int index)
         {
             return GetSizedImage(identifier, FullSizeWidth, index);
         }
@@ -72,7 +72,7 @@ namespace Granta.MaterialsWall.Controllers
         private Bitmap GetImage(Guid identifier, int imageIndex)
         {
             var card = cardRepository.GetCard(identifier);
-            string imagePath = imagePathFormatter.GetImagePath(Server, card.Id, imageIndex);
+            string imagePath = imagePathFormatter.GetImagePath(card.Id, imageIndex);
             var image = new Bitmap(imagePath);
             return image;
         }

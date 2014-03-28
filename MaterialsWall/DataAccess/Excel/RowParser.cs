@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Granta.MaterialsWall.Images;
 using Granta.MaterialsWall.Models;
 using OfficeOpenXml;
 
@@ -13,6 +14,8 @@ namespace Granta.MaterialsWall.DataAccess.Excel
 
     public sealed class RowParser : IRowParser
     {
+        private const int MaximumNumberOfImages = 3;
+
         private readonly ICardFactory cardFactory;
         private readonly IColumnNames columnNames;
 
@@ -68,7 +71,7 @@ namespace Granta.MaterialsWall.DataAccess.Excel
             var pathColumn = GetColumn(columnsMap, columnNames.Path);
             var path = GetColumnValue(pathColumn, worksheet, rowIndex);
             
-            var images = GetImages(columnsMap, worksheet, rowIndex);
+            var images = GetImages(id);
 
             var links = GetLinks(columnsMap, worksheet, rowIndex);
 
@@ -98,33 +101,20 @@ namespace Granta.MaterialsWall.DataAccess.Excel
             return string.IsNullOrWhiteSpace(value) ? null : value;
         }
 
-        private Image[] GetImages(IDictionary<string, Column> columnsMap, ExcelWorksheet worksheet, int rowIndex)
+        private Image[] GetImages(string materialId)
         {
             var images = new List<Image>();
-
-            if (DoesImageExist(columnNames.Image1, columnsMap, worksheet, rowIndex))
+            var imagePathFormatter = new ImagePathFormatter();
+            
+            for (int index = 1; index <= MaximumNumberOfImages; index++)
             {
-                images.Add(new Image(1));
-            }
-
-            if (DoesImageExist(columnNames.Image2, columnsMap, worksheet, rowIndex))
-            {
-                images.Add(new Image(2));
-            }
-
-            if (DoesImageExist(columnNames.Image3, columnsMap, worksheet, rowIndex))
-            {
-                images.Add(new Image(3));
+                if (imagePathFormatter.DoesImageExist(materialId, index))
+                {
+                    images.Add(new Image(index));
+                }
             }
 
             return images.ToArray();
-        }
-
-        private bool DoesImageExist(string columnName, IDictionary<string, Column> columnsMap, ExcelWorksheet worksheet, int rowIndex)
-        {
-            var column = GetColumn(columnsMap, columnName);
-            var columnValue = GetColumnValue(column, worksheet, rowIndex);
-            return string.Equals(columnValue, "yes", StringComparison.InvariantCultureIgnoreCase);
         }
 
         private Link[] GetLinks(IDictionary<string, Column> columnsMap, ExcelWorksheet worksheet, int rowIndex)
