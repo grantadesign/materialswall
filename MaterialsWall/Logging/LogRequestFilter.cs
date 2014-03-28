@@ -14,7 +14,9 @@ namespace Granta.MaterialsWall.Logging
             var response = filterContext.HttpContext.Response;
             var sb = new StringBuilder();
             sb.AppendLine("Request via QR code:");
-            sb.AppendFormat("    Request: {0} {1}{2}", request.Url.AbsoluteUri, request.UserHostAddress, Environment.NewLine);
+            sb.AppendFormat("    Request:  {0}{1}", request.Url.AbsoluteUri, Environment.NewLine);
+            sb.AppendFormat("              {0}{1}", request.UserHostAddress, Environment.NewLine);
+            sb.AppendFormat("              {0}{1}", request.UserAgent, Environment.NewLine);
             sb.AppendFormat("    Response: {0}{1}", response.StatusCode, Environment.NewLine);
             logger.Info(sb.ToString());
         }
