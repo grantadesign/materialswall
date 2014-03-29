@@ -9,15 +9,13 @@ namespace Granta.MaterialsWall.Controllers
 {
     public sealed class ImageController : Controller
     {
-        private const int ThumbnailWidth = 240;
-        private const int FullSizeWidth = 800;
-
         private readonly ICardRepository cardRepository;
         private readonly IImagePathFormatter imagePathFormatter;
         private readonly IImageToRawDataConverter imageToRawDataConverter;
         private readonly IThumbnailGenerator thumbnailGenerator;
+        private readonly IImageDimensionProvider imageDimensionProvider;
 
-        public ImageController(ICardRepository cardRepository, IImagePathFormatter imagePathFormatter, IImageToRawDataConverter imageToRawDataConverter, IThumbnailGenerator thumbnailGenerator)
+        public ImageController(ICardRepository cardRepository, IImagePathFormatter imagePathFormatter, IImageToRawDataConverter imageToRawDataConverter, IThumbnailGenerator thumbnailGenerator, IImageDimensionProvider imageDimensionProvider)
         {
             if (cardRepository == null)
             {
@@ -39,20 +37,26 @@ namespace Granta.MaterialsWall.Controllers
                 throw new ArgumentNullException("thumbnailGenerator");
             }
 
+            if (imageDimensionProvider == null)
+            {
+                throw new ArgumentNullException("imageDimensionProvider");
+            }
+            
             this.cardRepository = cardRepository;
             this.imagePathFormatter = imagePathFormatter;
             this.imageToRawDataConverter = imageToRawDataConverter;
             this.thumbnailGenerator = thumbnailGenerator;
+            this.imageDimensionProvider = imageDimensionProvider;
         }
 
         public ActionResult Index(Guid identifier, int index)
         {
-            return GetSizedImage(identifier, FullSizeWidth, index);
+            return GetSizedImage(identifier, imageDimensionProvider.GetFullsizeWidth(), index);
         }
 
         public ActionResult Thumbnail(Guid identifier)
         {
-            return GetSizedImage(identifier, ThumbnailWidth);
+            return GetSizedImage(identifier, imageDimensionProvider.GetThumbnailWidth());
         }
 
         private ActionResult GetSizedImage(Guid identifier, int maxWidth, int imageIndex = 1)

@@ -161,6 +161,7 @@
     <Compile Include="App_Start\Ninject\ConventionsModule.cs" />
     <Compile Include="App_Start\Ninject\DataLoadingModule.cs" />
     <Compile Include="App_Start\Ninject\DependencyResolverAdapter.cs" />
+    <Compile Include="App_Start\Ninject\HttpModule.cs" />
     <Compile Include="App_Start\Ninject\LoggingModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Content Include="Content\fotorama%402x.png" />
@@ -322,6 +323,12 @@
     <Compile Include="DataAccess\Excel\ExcelImporter.cs" />
     <Compile Include="DataAccess\Excel\RowParser.cs" />
     <Compile Include="DataAccess\FileSystemWatcherFactory.cs" />
+    <Compile Include="Images\ImageDimensionProvider.cs" />
+    <Compile Include="Images\ImagePresenceChecker.cs" />
+    <Compile Include="Images\MaterialsImagesPathProvider.cs" />
+    <Compile Include="Images\MaximumNumberOfImagesPerMaterialProvider.cs" />
+    <Compile Include="Images\MissingImageFilenameProvider.cs" />
+    <Compile Include="ServerPathMapper.cs" />
     <Compile Include="Logging\LoggingFilterProvider.cs" />
     <Compile Include="Logging\LogRequestFilter.cs" />
     <Compile Include="Logging\NLogToNinjectLogConverter.cs" />

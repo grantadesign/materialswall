@@ -14,12 +14,12 @@ namespace Granta.MaterialsWall.DataAccess.Excel
 
     public sealed class RowParser : IRowParser
     {
-        private const int MaximumNumberOfImages = 3;
-
         private readonly ICardFactory cardFactory;
         private readonly IColumnNames columnNames;
+        private readonly IImagePresenceChecker imagePresenceChecker;
+        private readonly IMaximumNumberOfImagesPerMaterialProvider maximumNumberOfImagesProvider;
 
-        public RowParser(ICardFactory cardFactory, IColumnNames columnNames)
+        public RowParser(ICardFactory cardFactory, IColumnNames columnNames, IImagePresenceChecker imagePresenceChecker, IMaximumNumberOfImagesPerMaterialProvider maximumNumberOfImagesProvider)
         {
             if (cardFactory == null)
             {
@@ -30,9 +30,21 @@ namespace Granta.MaterialsWall.DataAccess.Excel
             {
                 throw new ArgumentNullException("columnNames");
             }
+
+            if (imagePresenceChecker == null)
+            {
+                throw new ArgumentNullException("imagePresenceChecker");
+            }
+
+            if (maximumNumberOfImagesProvider == null)
+            {
+                throw new ArgumentNullException("maximumNumberOfImagesProvider");
+            }
             
             this.cardFactory = cardFactory;
             this.columnNames = columnNames;
+            this.imagePresenceChecker = imagePresenceChecker;
+            this.maximumNumberOfImagesProvider = maximumNumberOfImagesProvider;
         }
 
         public Card ParseRow(IEnumerable<Column> columns, ExcelWorksheet worksheet, int rowIndex)
@@ -104,11 +116,11 @@ namespace Granta.MaterialsWall.DataAccess.Excel
         private Image[] GetImages(string materialId)
         {
             var images = new List<Image>();
-            var imagePathFormatter = new ImagePathFormatter();
-            
-            for (int index = 1; index <= MaximumNumberOfImages; index++)
+            int maximumNumberOfImages = maximumNumberOfImagesProvider.GetMaximumNumberOfImagesPerMaterial();
+
+            for (int index = 1; index <= maximumNumberOfImages; index++)
             {
-                if (imagePathFormatter.DoesImageExist(materialId, index))
+                if (imagePresenceChecker.DoesImageExist(materialId, index))
                 {
                     images.Add(new Image(index));
                 }
