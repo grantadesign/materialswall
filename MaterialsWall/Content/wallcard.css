@@ -59,7 +59,6 @@
     color: #666;
     font-weight: bold;
     font-size: larger;
-    text-transform: capitalize;
 }
 
 .materialpath {
@@ -68,7 +67,6 @@
     font-weight: bold;
     font-size: small;
     text-wrap: normal;
-    text-transform: capitalize;
 }
 
 #loading {
