@@ -25,13 +25,16 @@ namespace Granta.MaterialsWall.Models
         public string Sample{get { return sample; }}
         private readonly string sample;
 
+        public string Notes{get { return notes; }}
+        private readonly string notes;
+
         public string Path{get { return path; }}
         private readonly string path;
 
         public Link[] Links{get { return links; }}
         private readonly Link[] links;
 
-        public Card(Guid identifier, string name, string id, string description, string typicalUses, string source, string sample, string path, Link[] links)
+        public Card(Guid identifier, string name, string id, string description, string typicalUses, string source, string sample, string notes, string path, Link[] links)
         {
             this.identifier = identifier;
             this.name = name;
@@ -40,6 +43,7 @@ namespace Granta.MaterialsWall.Models
             this.typicalUses = typicalUses;
             this.source = source;
             this.sample = sample;
+            this.notes = notes;
             this.path = path;
             this.links = links;
         }

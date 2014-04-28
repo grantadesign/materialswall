@@ -36,15 +36,19 @@
     font-size: 22px;
 }
 
+.materialnotes {
+    font-size: 12px;
+}
+
 .materialpath {
     color: #cc6633;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
     text-wrap: normal;
 }
 
 .materialsource {
     color: #666;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
 }

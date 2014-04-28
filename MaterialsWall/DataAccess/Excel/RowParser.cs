@@ -65,12 +65,15 @@ namespace Granta.MaterialsWall.DataAccess.Excel
             var sourceColumn = GetColumn(columnsMap, columnNames.Source);
             var source = GetColumnValue(sourceColumn, worksheet, rowIndex);
             
+            var notesColumn = GetColumn(columnsMap, columnNames.Notes);
+            var notes = GetColumnValue(notesColumn, worksheet, rowIndex);
+            
             var pathColumn = GetColumn(columnsMap, columnNames.Path);
             var path = GetColumnValue(pathColumn, worksheet, rowIndex);
             
             var links = GetLinks(columnsMap, worksheet, rowIndex);
 
-            return cardFactory.Create(identifier, name, id, description, typicalUses, source, sample, path, links);
+            return cardFactory.Create(identifier, name, id, description, typicalUses, source, sample, notes, path, links);
         }
 
         private static bool CardIsHidden(string visible)

@@ -12,15 +12,21 @@
 @foreach (var card in @Model)
 {
     <div class="walllabel">
-        <img src="@Url.Action("Image", "Labels", new { identifier = @card.Identifier})"/>
+        <img src="@Url.Action("Image", "Labels", new { identifier = @card.Identifier})" />
         <div class="details">
             <div class="materialname">@card.Name</div>
-            <div class="materialpath">@card.Path</div>
-        
+
+            @if (!string.IsNullOrWhiteSpace(card.Notes))
+            {
+                <div class="materialnotes">@card.Notes</div>
+            }
+
             @if (!string.IsNullOrWhiteSpace(card.Source))
             {
                 <div class="materialsource">Source: @card.Source</div>
             }
+
+            <div class="materialpath">@card.Path</div>
         </div>
     </div>
 }
