@@ -81,7 +81,7 @@ namespace Granta.MaterialsWall.DataAccess.Excel
         private Column GetColumn(IDictionary<string, Column> columnsMap, string columnName)
         {
             Column column;
-            columnsMap.TryGetValue(columnName, out column);
+            columnsMap.TryGetValue(columnName.ToUpper(), out column);
             return column;
         }
 
