@@ -6,7 +6,8 @@
 }
 
 <div class="slider">
-    Label width: <input type="range" name="labelWidth" min="350" max="800" value="580" onchange="javascript:changeLabelWidth(this);">
+    Label width: <input type="range" name="labelWidth" min="350" max="800" value="460" onchange="javascript:changeLabelWidth(this, 'labelWidthValue');">
+    <span id="labelWidthValue">460</span>
 </div>
 
 @foreach (var card in @Model)
@@ -34,9 +35,10 @@
 @section scripts
 {
     <script>
-        function changeLabelWidth(slider) {
+        function changeLabelWidth(slider, sliderValue) {
             var width = $(slider).val();
             $('.walllabel').width(width);
+            $('#' + sliderValue).text(width);
         }
     </script>
 }
