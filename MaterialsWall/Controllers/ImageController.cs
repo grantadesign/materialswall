@@ -9,15 +9,13 @@ namespace Granta.MaterialsWall.Controllers
 {
     public sealed class ImageController : Controller
     {
-        private const int ThumbnailWidth = 240;
-        private const int FullSizeWidth = 800;
-
         private readonly ICardRepository cardRepository;
         private readonly IImagePathFormatter imagePathFormatter;
         private readonly IImageToRawDataConverter imageToRawDataConverter;
         private readonly IThumbnailGenerator thumbnailGenerator;
+        private readonly IImageDimensionProvider imageDimensionProvider;
 
-        public ImageController(ICardRepository cardRepository, IImagePathFormatter imagePathFormatter, IImageToRawDataConverter imageToRawDataConverter, IThumbnailGenerator thumbnailGenerator)
+        public ImageController(ICardRepository cardRepository, IImagePathFormatter imagePathFormatter, IImageToRawDataConverter imageToRawDataConverter, IThumbnailGenerator thumbnailGenerator, IImageDimensionProvider imageDimensionProvider)
         {
             if (cardRepository == null)
             {
@@ -39,25 +37,31 @@ namespace Granta.MaterialsWall.Controllers
                 throw new ArgumentNullException("thumbnailGenerator");
             }
 
+            if (imageDimensionProvider == null)
+            {
+                throw new ArgumentNullException("imageDimensionProvider");
+            }
+            
             this.cardRepository = cardRepository;
             this.imagePathFormatter = imagePathFormatter;
             this.imageToRawDataConverter = imageToRawDataConverter;
             this.thumbnailGenerator = thumbnailGenerator;
+            this.imageDimensionProvider = imageDimensionProvider;
         }
 
-        public ActionResult Index(Guid identifier)
+        public ActionResult Index(Guid identifier, int index)
         {
-            return GetSizedImage(identifier, FullSizeWidth);
+            return GetSizedImage(identifier, imageDimensionProvider.GetFullsizeWidth(), index);
         }
 
         public ActionResult Thumbnail(Guid identifier)
         {
-            return GetSizedImage(identifier, ThumbnailWidth);
+            return GetSizedImage(identifier, imageDimensionProvider.GetThumbnailWidth());
         }
 
-        private ActionResult GetSizedImage(Guid identifier, int maxWidth)
+        private ActionResult GetSizedImage(Guid identifier, int maxWidth, int imageIndex = 1)
         {
-            var image = GetImage(identifier);
+            var image = GetImage(identifier, imageIndex);
             var originalSize = image.Size;
 
             if (originalSize.Width > maxWidth)
@@ -69,10 +73,10 @@ namespace Granta.MaterialsWall.Controllers
             return GetImageStream(image);
         }
 
-        private Bitmap GetImage(Guid identifier)
+        private Bitmap GetImage(Guid identifier, int imageIndex)
         {
             var card = cardRepository.GetCard(identifier);
-            string imagePath = imagePathFormatter.GetImagePath(Server, card.Id);
+            string imagePath = imagePathFormatter.GetImagePath(card.Id, imageIndex);
             var image = new Bitmap(imagePath);
             return image;
         }

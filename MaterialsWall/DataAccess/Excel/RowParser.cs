@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Granta.MaterialsWall.Images;
 using Granta.MaterialsWall.Models;
 using OfficeOpenXml;
 
@@ -15,8 +16,10 @@ namespace Granta.MaterialsWall.DataAccess.Excel
     {
         private readonly ICardFactory cardFactory;
         private readonly IColumnNames columnNames;
+        private readonly IImagePresenceChecker imagePresenceChecker;
+        private readonly IMaximumNumberOfImagesPerMaterialProvider maximumNumberOfImagesProvider;
 
-        public RowParser(ICardFactory cardFactory, IColumnNames columnNames)
+        public RowParser(ICardFactory cardFactory, IColumnNames columnNames, IImagePresenceChecker imagePresenceChecker, IMaximumNumberOfImagesPerMaterialProvider maximumNumberOfImagesProvider)
         {
             if (cardFactory == null)
             {
@@ -27,9 +30,21 @@ namespace Granta.MaterialsWall.DataAccess.Excel
             {
                 throw new ArgumentNullException("columnNames");
             }
+
+            if (imagePresenceChecker == null)
+            {
+                throw new ArgumentNullException("imagePresenceChecker");
+            }
+
+            if (maximumNumberOfImagesProvider == null)
+            {
+                throw new ArgumentNullException("maximumNumberOfImagesProvider");
+            }
             
             this.cardFactory = cardFactory;
             this.columnNames = columnNames;
+            this.imagePresenceChecker = imagePresenceChecker;
+            this.maximumNumberOfImagesProvider = maximumNumberOfImagesProvider;
         }
 
         public Card ParseRow(IEnumerable<Column> columns, ExcelWorksheet worksheet, int rowIndex)
@@ -71,9 +86,11 @@ namespace Granta.MaterialsWall.DataAccess.Excel
             var pathColumn = GetColumn(columnsMap, columnNames.Path);
             var path = GetColumnValue(pathColumn, worksheet, rowIndex);
             
+            var images = GetImages(id);
+
             var links = GetLinks(columnsMap, worksheet, rowIndex);
 
-            return cardFactory.Create(identifier, name, id, description, typicalUses, source, sample, notes, path, links);
+            return cardFactory.Create(identifier, name, id, description, typicalUses, source, sample, notes, path, images, links);
         }
 
         private static bool CardIsHidden(string visible)
@@ -97,6 +114,22 @@ namespace Granta.MaterialsWall.DataAccess.Excel
         {
             string value = worksheet.Cells[rowIndex, columnIndex].GetValue<string>();
             return string.IsNullOrWhiteSpace(value) ? null : value;
+        }
+
+        private Image[] GetImages(string materialId)
+        {
+            var images = new List<Image>();
+            int maximumNumberOfImages = maximumNumberOfImagesProvider.GetMaximumNumberOfImagesPerMaterial();
+
+            for (int index = 1; index <= maximumNumberOfImages; index++)
+            {
+                if (imagePresenceChecker.DoesImageExist(materialId, index))
+                {
+                    images.Add(new Image(index));
+                }
+            }
+
+            return images.ToArray();
         }
 
         private Link[] GetLinks(IDictionary<string, Column> columnsMap, ExcelWorksheet worksheet, int rowIndex)

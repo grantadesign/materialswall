@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Granta.MaterialsWall.DataAccess;
 
 namespace Granta.MaterialsWall.Models
 {

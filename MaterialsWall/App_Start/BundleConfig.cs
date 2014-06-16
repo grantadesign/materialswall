@@ -19,6 +19,9 @@ namespace Granta.MaterialsWall
             bundles.Add(new StyleBundle("~/bundles/about").Include(
                         "~/Content/about.css"));
 
+            bundles.Add(new StyleBundle("~/bundles/carouselcss").Include(
+                        "~/Content/fotorama.css"));
+
             bundles.Add(new StyleBundle("~/bundles/css").Include(
                         "~/Content/site.css",
                         "~/Content/materialswall.css"));
@@ -32,6 +35,9 @@ namespace Granta.MaterialsWall
             bundles.Add(new ScriptBundle("~/bundles/scroll-loading").Include(
                         "~/Scripts/scroll-loading.js",
                         "~/Scripts/jquery.infinite-scroll-helper.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/carousel").Include(
+                        "~/Scripts/fotorama.js"));
 
             BundleTable.EnableOptimizations = true;
         }
