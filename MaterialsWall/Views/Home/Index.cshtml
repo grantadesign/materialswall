@@ -15,11 +15,21 @@
     <img src="~/Content/loading.gif" />
 </div>
 
+<div id="to-top">
+    <a href="#top"><span class="glyphicon glyphicon-arrow-up"></span> Top</a>
+</div>
+
 @section scripts
 {
     <script>
         var nextPageStub = '@Url.Action("Page", "Home")?p=';
+
+        $("a[href='#top']").click(function () {
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        });
     </script>
     @Scripts.Render("~/bundles/searchfilter")
     @Scripts.Render("~/bundles/scroll-loading")
+    @Scripts.Render("~/bundles/back-to-top")
 }

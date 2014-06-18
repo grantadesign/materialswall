@@ -164,6 +164,7 @@
     <Compile Include="App_Start\Ninject\HttpModule.cs" />
     <Compile Include="App_Start\Ninject\LoggingModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="Scripts\back-to-top.js" />
     <Content Include="App_Data\MaterialImages\mat102.jpg" />
     <Content Include="App_Data\MaterialImages\mat105.jpg" />
     <Content Include="App_Data\MaterialImages\mat157.jpg" />
