@@ -39,6 +39,9 @@ namespace Granta.MaterialsWall
             bundles.Add(new ScriptBundle("~/bundles/carousel").Include(
                         "~/Scripts/fotorama.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/back-to-top").Include(
+                        "~/Scripts/back-to-top.js"));
+
             BundleTable.EnableOptimizations = true;
         }
     }

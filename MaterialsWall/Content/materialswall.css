@@ -48,7 +48,6 @@ hr {
     font-size: small;
     color: #999;
     padding-bottom: 10px;
-    text-align: right;
 }
 
 .footer hr {
@@ -71,4 +70,25 @@ hr {
 .about {
     text-align: center;
     margin-bottom: 4px;
+}
+
+#to-top {
+    padding: 5px;
+    background: #ccc;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: none;
+    border-radius: 4px 4px 0 0;
+}
+
+#to-top a {
+    color: white;
+    text-decoration: none;
+}
+
+#to-top a:hover {
+    color: #f6f6f6;
+    text-decoration: none;
 }
