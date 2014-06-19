@@ -118,10 +118,11 @@ namespace Granta.MaterialsWall.DataAccess.Excel
 
         private Image[] GetImages(string materialId)
         {
-            var images = new List<Image>();
+            // there is always at least one image, even if it is the "missing image"
+            var images = new List<Image> { new Image(1) };
             int maximumNumberOfImages = maximumNumberOfImagesProvider.GetMaximumNumberOfImagesPerMaterial();
 
-            for (int index = 1; index <= maximumNumberOfImages; index++)
+            for (int index = 2; index <= maximumNumberOfImages; index++)
             {
                 if (imagePresenceChecker.DoesImageExist(materialId, index))
                 {
