@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("MaterialsWall")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("www.adrianbanks.co.uk")]
+[assembly: AssemblyCompany("Granta Design Ltd")]
 [assembly: AssemblyProduct("MaterialsWall")]
-[assembly: AssemblyCopyright("Copyright © www.adrianbanks.co.uk 2014")]
+[assembly: AssemblyCopyright("Copyright ©2014 Granta Design Ltd")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
